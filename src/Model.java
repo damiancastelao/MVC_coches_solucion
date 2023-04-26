@@ -46,8 +46,8 @@ public class Model {
 
     /**
      * Sube la velocidad que queramos
-     * @param matricula
-     * @param v
+     * @param matricula matricula del coche
+     * @param v velocidad que quiero aumentar
      * @return la velocidad actualizada
      */
     public Integer subirVelocidad(String matricula,Integer v){
@@ -61,8 +61,8 @@ public class Model {
 
     /**
      * Baja la velocidad que queramos
-     * @param matricula
-     * @param v
+     * @param matricula matricula del coche
+     * @param v velocidad que quiero reducir
      * @return la velocidad actualizada
      */
     public Integer bajarVelocidad(String matricula,Integer v){
