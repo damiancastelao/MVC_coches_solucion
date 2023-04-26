@@ -34,16 +34,28 @@ public class Model {
     /**
      *
      * @param matricula
-     * @param v nueva velocidad
+     * @param v velocidad a aumentar
      * @return velocidad modificada
      */
-    public Integer cambiarVelocidad(String matricula, Integer v) {
+    public Integer subirVelocidad(String matricula, Integer v) {
         // busca el coche
-        getCoche(matricula).velocidad = v;
+        getCoche(matricula).velocidad = getCoche(matricula).velocidad+v;
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
 
+    /**
+     *
+     * @param matricula
+     * @param v velocidad a reducir
+     * @return velocidad modificada
+     */
+    public Integer bajarVelocidad(String matricula, Integer v) {
+        // busca el coche
+        getCoche(matricula).velocidad = getCoche(matricula).velocidad-v;
+        // retorna la nueva velocidad
+        return getCoche(matricula).velocidad;
+    }
     /**
      * Ddevuelve la velocidad segun la matricula
      * @param matricula
