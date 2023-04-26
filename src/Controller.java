@@ -8,6 +8,8 @@ public class Controller {
         miModelo.crearCoche("LaFerrari", "SBC 1234");
         miModelo.crearCoche("Alpine", "HYU 4567");
         miModelo.crearCoche("Aston Martin", "FGH 3333");
+        miModelo.bajarVelocidad("SBC 1234",30);
+        miModelo.subirVelocidad("HYU 4567",130);
 
         Coche ferrari = miModelo.getCoche("SBC 1234");
         // modifica la velocidad
@@ -17,5 +19,7 @@ public class Controller {
         boolean hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
 
         System.out.println(hecho);
+
+
     }
 }

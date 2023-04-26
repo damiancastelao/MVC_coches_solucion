@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Model {
     static ArrayList<Coche> parking = new ArrayList<>();
-
+    private int velocidad;
     /**
      * Crea un coche y lo mete en el parking
      * @param modelo del coche
@@ -14,6 +14,7 @@ public class Model {
         parking.add(aux);
         return aux;
     }
+
 
     /**
      * Busca coche segun matricula
@@ -40,6 +41,7 @@ public class Model {
     public Integer cambiarVelocidad(String matricula, Integer v) {
         // busca el coche
         getCoche(matricula).velocidad = v;
+
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
@@ -50,6 +52,30 @@ public class Model {
      * @return
      */
     public Integer getVelocidad(String matricula) {
+
         return getCoche(matricula).velocidad;
     }
-}
+
+
+    public Integer subirVelocidad(String matricula,int v) {
+        getCoche(matricula).velocidad += v;
+
+        return getCoche(matricula).velocidad;
+    }
+
+    public Integer bajarVelocidad(String matricula,int v) {
+        getCoche(matricula).velocidad -= v;
+
+        return getCoche(matricula).velocidad;
+    }
+    }
+
+
+
+
+
+
+
+
+
+

@@ -3,6 +3,7 @@
 Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
 
 ---
+
 ## Diagrama de clases:
 
 ```mermaid
@@ -22,6 +23,9 @@ classDiagram
           +getCoche(String)
           +cambiarVelocidad(String, Integer)
           +getVelocidad(String)
+          +subirVelocidad(String matricula,int v) 
+          +bajarVelocidad(String matricula,int v) 
+          
       }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
@@ -34,7 +38,6 @@ classDiagram
 ## Diagrama de Secuencia
 
 Ejemplo básico del procedimiento, sin utilizar los nombres de los métodos
-
 
 ```mermaid
 sequenceDiagram
@@ -59,13 +62,35 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    Controller->>Model: crearCoche(String matricula,int v)
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+      Controller->>+View: muestraVelocidad(String matricula,int v)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+     deactivate View
+      activate Model
+    Controller->>Model: subirVelocidad(String matricula,int v)
+    activate Model
+    Model-->>Controller: Velocidad
+   deactivate Model
+   
+     Controller->>+View: muestraVelocidad(String matricula,int v)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+     deactivate View
+     activate Model
+    Controller->>Model: bajarVelocidad(String matricula,int v)
+    activate Model
+    Model-->>Controller: Velocidad
+   deactivate Model
+    Controller->>+View: muestraVelocidad(String matricula,int v)
     activate View
     View->>-View: System.out.println()
     View-->>Controller: boolean
     deactivate View
+    
 ```
