@@ -69,3 +69,42 @@ sequenceDiagram
     View-->>Controller: boolean
     deactivate View
 ```
+Diagrama ejemplo aumentarVelocidad y bajarVelocidad
+
+```mermaid
+sequenceDiagram
+    participant Model
+    participant Controller
+    participant View
+    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    activate Model
+    Model-->>Controller: Coche
+    deactivate Model
+    Controller->>Model: cambiarVelocidad("BXK 1234", 150)
+    activate Model
+    Model-->>Controller: Nueva velocidad
+    deactivate Model
+    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+    deactivate View
+    Controller->>Model: aumentarVelocidad("BXK 1234", 10)
+    activate Model
+    Model-->>Controller: Nueva velocidad
+    deactivate Model
+    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+    deactivate View
+    Controller->>Model: bajarVelocidad("BXK 1234", 15)
+    activate Model
+    Model-->>Controller: Nueva velocidad
+    deactivate Model
+    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+    deactivate View
+```
