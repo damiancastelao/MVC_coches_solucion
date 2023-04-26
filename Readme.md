@@ -63,7 +63,7 @@ sequenceDiagram
     deactivate View
     Controller->>Model: Puedes bajarle la velocidad?
     activate Model
-    Model-->>Controller: Subida!
+    Model-->>Controller: Bajada!
     deactivate Model
     Controller->>+View: Muestra la velocidad, porfa
     activate View
