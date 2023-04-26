@@ -88,6 +88,15 @@ sequenceDiagram
     View->>-View: System.out.println()
     View-->>Controller: boolean
     deactivate View
+    Controller->>Model: cambiarVelocidad("BXK 1234", velocidadSubir)
+    activate Model
+    Model-->>Controller: Velocidad
+    deactivate Model
+    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+    deactivate View
     Controller->>Model: subirVelocidad("BXK 1234", velocidadSubir)
     activate Model
     Model-->>Controller: Velocidad
