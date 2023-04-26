@@ -15,7 +15,10 @@ classDiagram
       class Controller{
           +main()
       }
-      class View {+muestraVelocidad(String, Integer)}
+      class View {
+      +muestraVelocidad(String, Integer)
+      
+      }
       class Model {
           ArrayList~Coche~: parking
           +crearCoche(String, String, String)
@@ -44,6 +47,8 @@ sequenceDiagram
     Controller->>Model: Puedes crear un coche?
     activate Model
     Model-->>Controller: Creado!
+    Controlle->>Model:Puedes subir/bajar la velocidad? 
+     Model-->>Controller:Claro!
     deactivate Model
     Controller->>+View: Muestra la velocidad, porfa
     activate View
