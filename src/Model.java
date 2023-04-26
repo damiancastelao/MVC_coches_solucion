@@ -50,6 +50,22 @@ public class Model {
      * @return
      */
     public Integer getVelocidad(String matricula) {
+
         return getCoche(matricula).velocidad;
     }
+
+
+    public Integer subirVelocidad (String matricula,Integer v){
+        getCoche(matricula).velocidad=getCoche(matricula).velocidad+v;
+        return getCoche(matricula).velocidad;
+    }
+
+    public Integer bajarVelocidad (String matricula,Integer v){
+        getCoche(matricula).velocidad=getCoche(matricula).velocidad-v;
+        return getCoche(matricula).velocidad;
+    }
+
 }
+
+
+
