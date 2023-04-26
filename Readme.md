@@ -20,7 +20,8 @@ classDiagram
           ArrayList~Coche~: parking
           +crearCoche(String, String, String)
           +getCoche(String)
-          +cambiarVelocidad(String, Integer)
+          +subirVelocidad(String, Integer)
+          +bajarVelocidad(String, Integer)
           +getVelocidad(String)
       }
     Controller "1" *-- "1" Model : association
@@ -45,6 +46,10 @@ sequenceDiagram
     activate Model
     Model-->>Controller: Creado!
     deactivate Model
+    Controller->>+Model: Puedes subir la velocidad?
+    activate Model
+    Model-->>Controller: Nueva velocidad
+    deactivate Model
     Controller->>+View: Muestra la velocidad, porfa
     activate View
     View->>-View: Mostrando velocidad
@@ -62,6 +67,10 @@ sequenceDiagram
     Controller->>Model: crearCoche("Mercedes", "BXK 1234")
     activate Model
     Model-->>Controller: Coche
+    deactivate Model
+    Controller->>+Model: subirVelocidad("BXK 1234", 20)
+    activate Model
+    Model-->>Controller: Velocidad
     deactivate Model
     Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
     activate View
