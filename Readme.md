@@ -21,7 +21,11 @@ classDiagram
           +crearCoche(String, String, String)
           +getCoche(String)
           +cambiarVelocidad(String, Integer)
+          +subirVelocidad(String, Integer)
+          +bajarVelocidad(String, Integer)
           +getVelocidad(String)
+          
+          
       }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
@@ -62,6 +66,14 @@ sequenceDiagram
     Controller->>Model: crearCoche("Mercedes", "BXK 1234")
     activate Model
     Model-->>Controller: Coche
+    deactivate Model
+    Controller->>Model: subirVelocidad("SBC 1234", velocidad)
+    activate Model
+    Model-->>Controller: velocidad aumentada
+    deactivate Model
+    Controller->>Model: bajarVelocidad("SBC 1234", velocidad)
+    activate Model
+    Model-->>Controller: velocidad reducida
     deactivate Model
     Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
     activate View
