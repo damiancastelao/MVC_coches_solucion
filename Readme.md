@@ -79,38 +79,38 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    Controller->>Model: crearCoche("LaFerrari", "SBC 1234")
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>+View: muestraVelocidad("SBC 1234", velocidad)
     activate View
     View->>-View: System.out.println()
     View-->>Controller: boolean
     deactivate View
-    Controller->>Model: cambiarVelocidad("BXK 1234", velocidadSubir)
+    Controller->>Model: cambiarVelocidad("SBC 1234", velocidadSubir)
     activate Model
     Model-->>Controller: Velocidad
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>+View: muestraVelocidad("SBC 1234", velocidad)
     activate View
     View->>-View: System.out.println()
     View-->>Controller: boolean
     deactivate View
-    Controller->>Model: subirVelocidad("BXK 1234", velocidadSubir)
+    Controller->>Model: subirVelocidad("SBC 1234", velocidadSubir)
     activate Model
     Model-->>Controller: Velocidad
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>+View: muestraVelocidad("SBC 1234", velocidad)
     activate View
     View->>-View: System.out.println()
     View-->>Controller: boolean
     deactivate View
-    Controller->>Model: bajarVelocidad("BXK 1234", velocidadSubir)
+    Controller->>Model: bajarVelocidad("SBC 1234", velocidadSubir)
     activate Model
     Model-->>Controller: Velocidad
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>+View: muestraVelocidad("SBC 1234", velocidad)
     activate View
     View->>-View: System.out.println()
     View-->>Controller: boolean
