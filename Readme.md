@@ -64,7 +64,7 @@ sequenceDiagram
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>+View: muestraVelocidad(matricula, v~~~~)
     activate View
     View->>-View: System.out.println()
     View-->>Controller: boolean
