@@ -20,7 +20,8 @@ classDiagram
           ArrayList~Coche~: parking
           +crearCoche(String, String, String)
           +getCoche(String)
-          +cambiarVelocidad(String, Integer)
+          +aumentarVelocidad(String, Integer)
+          +bajarVelocidad(String, Integer)
           +getVelocidad(String)
       }
     Controller "1" *-- "1" Model : association
@@ -45,12 +46,18 @@ sequenceDiagram
     activate Model
     Model-->>Controller: Creado!
     deactivate Model
-    Controller->>+View: Muestra la velocidad, porfa
+    Controller->>+View: Muestra la velocidad aumentada, porfa
     activate View
-    View->>-View: Mostrando velocidad
+    View->>-View: Mostrando velocidad aumentada
+    View-->>Controller: Listo!
+    deactivate Model
+    Controller->>+View: Muestra la velocidad bajada, porfa
+    activate View
+    View->>-View: Mostrando velocidad bajada
     View-->>Controller: Listo!
     deactivate View
 ```
+
 
 El mismo diagrama con los nombres de los métodos
 
@@ -59,13 +66,21 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    Controller->>Model: crearCoche("Aston Martin" , "FGH 3333")
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>+View: aumentarVelocidad("FGH 3333", velocidad)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+    deactivate Model
+    Controller->>+View: bajarVelocidad("HYU 4567", velocidad)
     activate View
     View->>-View: System.out.println()
     View-->>Controller: boolean
     deactivate View
 ```
+
+
+

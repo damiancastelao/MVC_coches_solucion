@@ -11,10 +11,11 @@ public class Controller {
 
         Coche ferrari = miModelo.getCoche("SBC 1234");
         // modifica la velocidad
-        miModelo.cambiarVelocidad("SBC 1234", 30);
+        miModelo.subirVelocidad("FGH 3333", 30);
+        miModelo.bajarVelocidad("HYU 4567", 20);
 
         // recoje la velocidad y la muestra (tarea de la View)
-        boolean hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
+        boolean hecho = miVista.muestraVelocidad("FGH 3333", miModelo.getVelocidad("FGH 3333"));
 
         System.out.println(hecho);
     }
