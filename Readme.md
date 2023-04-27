@@ -34,26 +34,6 @@ classDiagram
 
 ## Diagrama de Secuencia
 
-Ejemplo básico del procedimiento, sin utilizar los nombres de los métodos
-
-
-```mermaid
-sequenceDiagram
-    participant Model
-    participant Controller
-    participant View
-    Controller->>Model: Puedes crear un coche?
-    activate Model
-    Model-->>Controller: Creado!
-    deactivate Model
-    Controller->>+View: Muestra la velocidad, porfa
-    activate View
-    View->>-View: Mostrando velocidad
-    View-->>Controller: Listo!
-    deactivate View
-```
-
-El mismo diagrama con los nombres de los métodos
 
 ```mermaid
 sequenceDiagram
