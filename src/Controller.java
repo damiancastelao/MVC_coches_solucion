@@ -10,8 +10,8 @@ public class Controller {
         miModelo.crearCoche("Aston Martin", "FGH 3333");
 
         Coche ferrari = miModelo.getCoche("SBC 1234");
-        // modifica la velocidad
-        miModelo.cambiarVelocidad("SBC 1234", 30);
+        // Sube la velocidad
+        miModelo.subirVelocidad("SBC 1234", 30);
 
         // recoje la velocidad y la muestra (tarea de la View)
         boolean hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));

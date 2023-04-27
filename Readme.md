@@ -20,7 +20,8 @@ classDiagram
           ArrayList~Coche~: parking
           +crearCoche(String, String, String)
           +getCoche(String)
-          +cambiarVelocidad(String, Integer)
+          +subirVelocidad(String, Integer)
+          +bajarVelocidad(String, Integer)
           +getVelocidad(String)
       }
     Controller "1" *-- "1" Model : association
@@ -33,26 +34,6 @@ classDiagram
 
 ## Diagrama de Secuencia
 
-Ejemplo básico del procedimiento, sin utilizar los nombres de los métodos
-
-
-```mermaid
-sequenceDiagram
-    participant Model
-    participant Controller
-    participant View
-    Controller->>Model: Puedes crear un coche?
-    activate Model
-    Model-->>Controller: Creado!
-    deactivate Model
-    Controller->>+View: Muestra la velocidad, porfa
-    activate View
-    View->>-View: Mostrando velocidad
-    View-->>Controller: Listo!
-    deactivate View
-```
-
-El mismo diagrama con los nombres de los métodos
 
 ```mermaid
 sequenceDiagram
@@ -60,6 +41,10 @@ sequenceDiagram
     participant Controller
     participant View
     Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    activate Model
+    Model-->>Controller: Coche
+    deactivate Model
+    Controller->>Model: subir/bajarVelocidad("BXK 1234", 50)
     activate Model
     Model-->>Controller: Coche
     deactivate Model
