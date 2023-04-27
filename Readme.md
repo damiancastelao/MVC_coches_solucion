@@ -43,7 +43,7 @@ sequenceDiagram
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>+View: aumentarVelocidad("FGH 3333", velocidad)/bajarVelocidad("HYU 4567", velocidad)
+    Controller->>Model: aumentarVelocidad("FGH 3333", velocidad)/bajarVelocidad("HYU 4567", velocidad)
     activate Model
     Model-->>Controller: Coche
     deactivate Model
