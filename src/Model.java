@@ -45,6 +45,28 @@ public class Model {
     }
 
     /**
+     * Sube la velocidad que queramos
+     * @param matricula del coche
+     * @param v velocidad a aumentar
+     * @return velocidad actualizada
+     */
+    public Integer subirVelocidad(String matricula, Integer v){
+        getCoche(matricula).velocidad = v + getCoche(matricula).velocidad;
+        return getCoche(matricula).velocidad;
+    }
+
+    /**
+     * Baja la velocidad que queramos
+     * @param matricula del coche
+     * @param v velocidad a reducir
+     * @return velocidad actualizada
+     */
+    public Integer bajarVelocidad(String matricula, Integer v){
+        getCoche(matricula).velocidad = getCoche(matricula).velocidad - v;
+        return getCoche(matricula).velocidad;
+    }
+
+    /**
      * Ddevuelve la velocidad segun la matricula
      * @param matricula
      * @return

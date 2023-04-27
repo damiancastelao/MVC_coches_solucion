@@ -63,6 +63,14 @@ sequenceDiagram
     activate Model
     Model-->>Controller: Coche
     deactivate Model
+    Controller->>Model: subirVelocidad("SBC 1234", velocidad)
+    activate Model
+    Model-->>Controller: velocidad aumentada
+    deactivate Model
+    Controller->>Model: bajarVelocidad("SBC 1234", velocidad)
+    activate Model
+    Model-->>Controller: velocidad reducida
+    deactivate Model
     Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
     activate View
     View->>-View: System.out.println()
