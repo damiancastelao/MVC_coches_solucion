@@ -31,16 +31,34 @@ public class Model {
         return aux;
     }
 
+
     /**
-     *
+     * metodo que aumenta la velocidad actual
      * @param matricula
-     * @param v nueva velocidad
-     * @return velocidad modificada
+     * @param v pisamos el acelerador
+     * @return nueva velocidad
      */
-    public Integer cambiarVelocidad(String matricula, Integer v) {
-        // busca el coche
-        getCoche(matricula).velocidad = v;
-        // retorna la nueva velocidad
+    public Integer subirVelocidad(String matricula, Integer v){
+        //buscamos el coche
+        Integer velocidadActual = getCoche(matricula).velocidad;
+        //subimos la velocidad
+        velocidadActual += v;
+        //retornamos la nueva velocidad
+        return getCoche(matricula).velocidad;
+    }
+
+    /**
+     * metodo que disminuye la velocidad actual
+     * @param matricula
+     * @param v soltamos el acelerador
+     * @return nueva velocidad
+     */
+    public Integer bajarVelocidad(String matricula, Integer v){
+        //buscamos el coche
+        Integer velocidadActual = getCoche(matricula).velocidad;
+        //subimos la velocidad
+        velocidadActual -= v;
+        //retornamos la nueva velocidad
         return getCoche(matricula).velocidad;
     }
 

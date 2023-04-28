@@ -2,6 +2,17 @@
 
 Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
 
+### ejercicios
+
+
+Crea tu rama de desarrollo
+Realiza una modificación que en vez de cambiar la velocidad, haya dos métodos:
+subirVelocidad(String matricula, Integer v), sube la velocidad en 'v' unidades
+bajarVelocidad(String matricula, Integer v), baja la velocidad en 'v' unidades
+Modifica el diagrama de clases y secuencia
+realiza un pull request al repositorio original
+
+
 ---
 ## Diagrama de clases:
 
@@ -20,7 +31,8 @@ classDiagram
           ArrayList~Coche~: parking
           +crearCoche(String, String, String)
           +getCoche(String)
-          +cambiarVelocidad(String, Integer)
+          +subirVelocidad(String, Integer):Integer
+          +bajarVelocidad(String, Integer):Integer
           +getVelocidad(String)
       }
     Controller "1" *-- "1" Model : association
