@@ -20,7 +20,8 @@ classDiagram
           ArrayList~Coche~: parking
           +crearCoche(String, String, String)
           +getCoche(String)
-          +cambiarVelocidad(String, Integer)
+          +subirVelocidad(String, Integer)
+          +bajarVelocidad(String, Integer)
           +getVelocidad(String)
       }
     Controller "1" *-- "1" Model : association
@@ -59,13 +60,25 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    Controller->>Model: crearCoche(LaFerrari, SBC 1234)
     activate Model
-    Model-->>Controller: Coche
+    Model-->>Controller: Coche creado
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>Model: getCoche(matricula)
+    activate Model
+    Model-->>Controller: Coche encontrado
+    deactivate Model
+    Controller->>Model: subirVelocidad(SBC 1234, 40)
+    activate Model
+    Model-->>Controller: Velocidad subida
+    deactivate Model
+    Controller->>Model: bajarVelocidad(SBC 1234, 20)
+    activate Model
+    Model-->>Controller: Velocidad bajada
+    deactivate Model
+    Controller->>+View: muestraVelocidad(SBC 1234, velocidad)
     activate View
-    View->>-View: System.out.println()
-    View-->>Controller: boolean
+    View->>-View: Mostrando velocidad
+    View-->>Controller: Listo!
     deactivate View
 ```
