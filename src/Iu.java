@@ -4,12 +4,11 @@ import java.awt.event.ActionListener;
 
 public class Iu {
     static Controller controller ;
-
-
     private JButton buttonCrearCoche;
     private JTextField textFielMatricula;
     private JTextField textFieldModelo;
     private JPanel panelIu;
+    private JLabel lblModelo;
 
 
     public Iu() {
@@ -34,6 +33,7 @@ public class Iu {
         jframe.setVisible(true);
         jframe.setBounds(600, 300, 500, 350);
     }
+
 
 
 }

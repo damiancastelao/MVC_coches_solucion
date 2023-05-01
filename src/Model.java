@@ -3,17 +3,22 @@ import java.util.ArrayList;
 public class Model {
     static ArrayList<Coche> parking = new ArrayList<>();
     private int velocidad;
+    private Coche coche;
 
     /**
      * Crea un coche y lo mete en el parking
-     * @param modelo  del coche
-     * @param matricula identificador unico
      * @return el coche creado
      */
-    public Coche crearCoche(String modelo, String matricula) {
-        Coche aux = new Coche(modelo, matricula);
-        parking.add(aux);
-        return aux;
+ public Coche crearCoche() {
+     coche= new BuilderCoche()
+                 .setTapizadoDeCuero()
+                 .setModelo("Sport")
+             .setAireAcondicionado()
+             .setNumeroDePuertas(2)
+             .setTapizadoDeCuero()
+                 .build();
+     return coche;
+
     }
 
 
