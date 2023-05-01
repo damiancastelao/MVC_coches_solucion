@@ -6,6 +6,7 @@ Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
 
 ## Diagrama de clases:
 
+
 ```mermaid
 classDiagram
     class Coche {
@@ -23,74 +24,80 @@ classDiagram
           +getCoche(String)
           +cambiarVelocidad(String, Integer)
           +getVelocidad(String)
-          +subirVelocidad(String matricula,int v) 
-          +bajarVelocidad(String matricula,int v) 
-          
       }
+      
+      class IU { mostrarVentana()}
+      
+      class Dialog { mostrarVelocidad() }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association
+    View "1" *-- "1" IU : association
+    View "1" *-- "1" Dialog : association
       
 ```
 
 ---
 
-## Diagrama de Secuencia
+## Evento en el View
 
-Ejemplo básico del procedimiento, sin utilizar los nombres de los métodos
+Cuando ocurre un evento en la vista, el `controller` se tiene que enterar.
+Tenemos que tener en cuenta que en el MVC estricto, la vista no se comunica con el modelo.
 
-```mermaid
-sequenceDiagram
-    participant Model
-    participant Controller
-    participant View
-    Controller->>Model: Puedes crear un coche?
-    activate Model
-    Model-->>Controller: Creado!
-    deactivate Model
-    Controller->>+View: Muestra la velocidad, porfa
-    activate View
-    View->>-View: Mostrando velocidad
-    View-->>Controller: Listo!
-    deactivate View
-```
+En el listener del botón llamamos al `controller`
 
-El mismo diagrama con los nombres de los métodos
+
+
 
 ```mermaid
+
 sequenceDiagram
-    participant Model
-    participant Controller
+    actor usuario
     participant View
-    Controller->>Model: crearCoche(String matricula,int v)
+    participant Controller
+    participant Model
+    
+    usuario->>View: click! Crear coche
+    View->>Controller: el usuario quiere crear un coche
+    activate Controller
+    Controller->>Model: crea un coche, porfa
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-      Controller->>+View: muestraVelocidad(String matricula,int v)
-    activate View
-    View->>-View: System.out.println()
-    View-->>Controller: boolean
-     deactivate View
-      activate Model
-    Controller->>Model: subirVelocidad(String matricula,int v)
-    activate Model
-    Model-->>Controller: Velocidad
-   deactivate Model
-   
-     Controller->>+View: muestraVelocidad(String matricula,int v)
-    activate View
-    View->>-View: System.out.println()
-    View-->>Controller: boolean
-     deactivate View
-     activate Model
-    Controller->>Model: bajarVelocidad(String matricula,int v)
-    activate Model
-    Model-->>Controller: Velocidad
-   deactivate Model
-    Controller->>+View: muestraVelocidad(String matricula,int v)
-    activate View
-    View->>-View: System.out.println()
-    View-->>Controller: boolean
-    deactivate View
+    Controller->>View: ok, coche creado!
+    deactivate Controller
+    View-->>usuario: tu coche se creó!
     
+     
 ```
+Ahora la parte de la Arquitectura de la vista, son tres clases
+
+```mermaid
+
+   sequenceDiagram
+   autonumber
+    actor usuario
+    participant IU
+    participant Dialog
+    participant View
+  
+    participant Controller
+    participant Model
+    
+    usuario->>IU: click! Crear coche
+    
+    IU->>Controller: crea un coche()
+     activate Controller
+    Controller->>Model: crea un coche
+      activate Model
+     Model-->> Controller: Coche
+    deactivate Model
+     
+    Controller->>+View: mostrarVelocidad()
+     deactivate Controller
+     
+    View-->>-Dialog:  mostrarVelocidad()
+    
+          
+```
+

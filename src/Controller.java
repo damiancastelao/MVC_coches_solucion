@@ -32,8 +32,8 @@ public class Controller {
      */
 
     public void crearCoche(String modelo, String matricula) {
-        Coche aux = miModelo.crearCoche(modelo, matricula);
-        if (aux != null) miVista.mostrarVelocidad(aux.matricula, aux.velocidad);
+        Coche coche = miModelo.crearCoche(modelo, matricula);
+        if (coche != null) miVista.mostrarVelocidad(coche.matricula, coche.velocidad);
         // TODO mandar mensaje de error si no fue posible crear el coche
     }
 }

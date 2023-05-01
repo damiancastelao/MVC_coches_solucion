@@ -6,8 +6,7 @@ public class Model {
 
     /**
      * Crea un coche y lo mete en el parking
-     *
-     * @param modelo    del coche
+     * @param modelo  del coche
      * @param matricula identificador unico
      * @return el coche creado
      */
@@ -20,7 +19,6 @@ public class Model {
 
     /**
      * Busca coche segun matricula
-     *
      * @param matricula a buscar
      * @return chche o null si no existe
      */
@@ -37,7 +35,7 @@ public class Model {
 
     /**
      * @param matricula
-     * @param v         nueva velocidad
+     * @param v   nueva velocidad
      * @return velocidad modificada
      */
     public Integer cambiarVelocidad(String matricula, Integer v) {

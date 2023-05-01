@@ -14,9 +14,8 @@ public class View {
 
     /**
      * Muestra la velocidad
-     *
      * @param matricula del coche
-     * @param v         velocidad que ueremos mostrar
+     * @param v  velocidad que ueremos mostrar
      * @return true si todo bien
      */
     boolean mostrarVelocidad(String matricula, Integer v) {

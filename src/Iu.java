@@ -35,9 +35,7 @@ public class Iu {
         jframe.setBounds(600, 300, 500, 350);
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
+
 }
 
 
