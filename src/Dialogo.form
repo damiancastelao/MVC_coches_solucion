@@ -6,7 +6,9 @@
       <xy x="20" y="20" width="684" height="400"/>
     </constraints>
     <properties>
+      <background color="-3233585"/>
       <doubleBuffered value="false"/>
+      <enabled value="false"/>
       <nextFocusableComponent value="root"/>
       <preferredSize width="276" height="100"/>
     </properties>

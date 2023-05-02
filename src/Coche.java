@@ -5,7 +5,7 @@ public class Coche {
      boolean aireAcondicionado;
      int numeroDePuertas;
      boolean tapizadoDeCuero;
-    public Coche(String modelo, String matricula,Integer velocidad,boolean aireAcondicionado, int numeroDePuertas, boolean tapizadoDeCuero) {
+    public Coche(String modelo, String matricula,boolean aireAcondicionado, int numeroDePuertas, boolean tapizadoDeCuero) {
         this.modelo = modelo;
         this.matricula = matricula;
         this.velocidad = velocidad;
@@ -17,7 +17,8 @@ public class Coche {
     public Coche() {
         numeroDePuertas = 2;
         matricula = "325295BC";
-        aireAcondicionado = true;
+        aireAcondicionado = false;
+        tapizadoDeCuero=false;
 
 
     }
@@ -70,15 +71,5 @@ public class Coche {
         this.tapizadoDeCuero = tapizadoDeCuero;
     }
 
-    @Override
-    public String toString() {
-        return
 
-                        " aireAcondicionado = " + aireAcondicionado + "\n" +
-                        " numeroDePuertas = " + numeroDePuertas + "\n" +
-                        " tapizadoDeCuero = " + tapizadoDeCuero + "\n" +
-                        " matricula = " + matricula + "\n" +
-                        " fabricar = " + modelo + "\n";
-
-    }
 }

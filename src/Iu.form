@@ -5,17 +5,26 @@
     <constraints>
       <xy x="20" y="20" width="469" height="332"/>
     </constraints>
-    <properties/>
-    <border type="none"/>
+    <properties>
+      <background color="-3233585"/>
+      <font style="1"/>
+      <foreground color="-7815729"/>
+    </properties>
+    <border type="none" title-justification="2">
+      <title-color color="-16777216"/>
+    </border>
     <children>
       <component id="3efcf" class="javax.swing.JLabel" binding="lblModelo">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <enabled value="true"/>
+          <focusable value="true"/>
           <horizontalAlignment value="0"/>
           <iconTextGap value="15"/>
-          <opaque value="true"/>
+          <inheritsPopupMenu value="true"/>
+          <opaque value="false"/>
           <text value="Modelo:"/>
         </properties>
       </component>
@@ -75,17 +84,22 @@
           <horizontalAlignment value="0"/>
         </properties>
       </component>
-      <component id="ba487" class="javax.swing.JComboBox" binding="comboBoxAire">
-        <constraints>
-          <grid row="3" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
       <component id="b31a4" class="javax.swing.JComboBox" binding="comboBoxTapizado">
         <constraints>
           <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-2236963"/>
+          <doubleBuffered value="false"/>
+          <editable value="true"/>
+          <foreground color="-7815729"/>
+          <model>
+            <item value="Opcion:"/>
+            <item value="Si "/>
+            <item value="No"/>
+          </model>
+          <requestFocusEnabled value="false"/>
+        </properties>
       </component>
       <component id="6b81f" class="javax.swing.JButton" binding="buttonCrearCoche">
         <constraints>
@@ -102,7 +116,28 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="true"/>
+        </properties>
+      </component>
+      <component id="ba487" class="javax.swing.JComboBox" binding="comboBoxAire">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <autoscrolls value="false"/>
+          <background color="-2236963"/>
+          <editable value="true"/>
+          <enabled value="true"/>
+          <foreground color="-7815729"/>
+          <inheritsPopupMenu value="false"/>
+          <model>
+            <item value="Opcion:"/>
+            <item value="Si"/>
+            <item value="No"/>
+          </model>
+          <requestFocusEnabled value="false"/>
+        </properties>
       </component>
     </children>
   </grid>

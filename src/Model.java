@@ -10,7 +10,7 @@ public class Model {
      * @return el coche creado
      */
  public Coche crearCoche(String modelo, String matricula, boolean aireAcondicionado, int numeroDePuertas, boolean tapizadoDeCuero) {
-     coche= new BuilderCoche().build();
+     coche= new Coche ( modelo,  matricula,  aireAcondicionado,  numeroDePuertas,  tapizadoDeCuero);
      parking.add(coche);
 
      return coche;
