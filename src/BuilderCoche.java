@@ -1,4 +1,7 @@
 public class BuilderCoche {
+    /**
+     * Construimos coche con builder
+     */
     private Coche _coche;
 
     public BuilderCoche() {
@@ -6,8 +9,12 @@ public class BuilderCoche {
     }
 
 
-    public BuilderCoche setTapizadoDeCuero() {
-        _coche.setTapizadoDeCuero(true);
+    public BuilderCoche setTapizadoDeCuero(boolean tapizadoDeCuero) {
+        _coche.setTapizadoDeCuero(tapizadoDeCuero);
+        return this;
+    }
+    public BuilderCoche setMatricula(String matricula) {
+        _coche.setMatricula(matricula);
         return this;
     }
 
@@ -21,10 +28,14 @@ public class BuilderCoche {
         return this;
     }
 
-    public BuilderCoche setAireAcondicionado() {
-        _coche.setAireAcondicionado(true);
+    public BuilderCoche setAireAcondicionado(boolean aireAcondicionado) {
+        _coche.setAireAcondicionado(aireAcondicionado);
         return this;
     }
+
+    /**
+     * @return _coche
+     */
 
     public Coche build() {
 

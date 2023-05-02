@@ -2,21 +2,25 @@ import java.util.ArrayList;
 
 public class Model {
     static ArrayList<Coche> parking = new ArrayList<>();
-    private int velocidad;
-    private Coche coche;
+    private BuilderCoche builder = new BuilderCoche();
 
     /**
-     * Crea un coche y lo mete en el parking
-     * @return el coche creado
+     * Crea un coche cn builder que permite construir objetos complejos paso a paso.
+     *añadimos el coche en el parking
+     * @return  coche
      */
- public Coche crearCoche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas) {
-     coche= new Coche ( modelo,  matricula,  aireAcondicionado, tapizadoDeCuero, numeroDePuertas);
-     parking.add(coche);
+    public Coche crearCoche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas) {
 
-     return coche;
+        Coche coche = builder.setModelo(modelo)
+                .setMatricula(matricula)
+                .setAireAcondicionado(aireAcondicionado)
+                .setTapizadoDeCuero(tapizadoDeCuero)
+                .setNumeroDePuertas(numeroDePuertas).build();
+
+        parking.add(coche);
+        return coche;
 
     }
-
 
     /**
      * Busca coche segun matricula
@@ -24,56 +28,62 @@ public class Model {
      * @return chche o null si no existe
      */
     public Coche getCoche(String matricula) {
-        Coche aux = null;
+        Coche coche1 = null;
         // recorre el array buscando por matricula
-        for (Coche e : parking) {
-            if (e.matricula.equals(matricula)) {
-                aux = e;
+        for (Coche coche : parking) {
+            if (coche.matricula.equals(matricula)) {
+                coche1 = coche;
             }
         }
-        return aux;
+        return coche1;
     }
 
     /**
      * @param matricula
-     * @param v   nueva velocidad
+     * @param velocidadTotal nueva velocidad
      * @return velocidad modificada
      */
-    public Integer cambiarVelocidad(String matricula, Integer v) {
+    public Integer cambiarVelocidad(String matricula, Integer velocidadTotal) {
         // busca el coche
-        getCoche(matricula).velocidad = v;
+        Coche coche = getCoche(matricula);
+        coche.velocidad = velocidadTotal;
 
         // retorna la nueva velocidad
-        return getCoche(matricula).velocidad;
+        return coche.velocidad;
     }
 
     /**
      * Ddevuelve la velocidad segun la matricula
-     *
-     * @param matricula
+     * @param matricula coche
      */
     public Integer getVelocidad(String matricula) {
-
-        return getCoche(matricula).velocidad;
+        Coche coche = getCoche(matricula);
+        return coche.velocidad;
     }
 
     /**
-     * @param v nueva velocidad
+     * @param velocidadAumentar nueva velocidad
      * @return velocidad modificada
      */
-    public Integer subirVelocidad(String matricula, int v) {
+    public Integer subirVelocidad(String matricula, int velocidadAumentar) {
         // busca el coche
-        getCoche(matricula).velocidad += v;
+        Coche coche = getCoche(matricula);
+        coche.velocidad += velocidadAumentar;
 
         // retorna la nueva velocidad
-        return getCoche(matricula).velocidad;
+        return coche.velocidad + velocidadAumentar;
     }
-
-    public Integer bajarVelocidad(String matricula, int v) {
+    /**
+     * @param velocidadDisminuir nueva velocidad
+     * @return velocidad modificada
+     */
+    public Integer bajarVelocidad(String matricula, int velocidadDisminuir) {
         // busca el coche
-        getCoche(matricula).velocidad -= v;
+        Coche coche = getCoche(matricula);
+        coche.velocidad -= velocidadDisminuir;
+
         // retorna la nueva velocidad
-        return getCoche(matricula).velocidad;
+        return coche.velocidad - velocidadDisminuir;
     }
 }
 

@@ -1,19 +1,20 @@
 public class Coche {
     String matricula;
     String modelo;
-    int  velocidad;
-     boolean aireAcondicionado;
-     int numeroDePuertas;
-     boolean tapizadoDeCuero;
-    public Coche(String modelo, String matricula,boolean aireAcondicionado, boolean tapizadoDeCuero,int numeroDePuertas) {
+    int velocidad;
+    boolean aireAcondicionado;
+    int numeroDePuertas;
+    boolean tapizadoDeCuero;
+
+    public Coche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas) {
         this.modelo = modelo;
         this.matricula = matricula;
-        this.velocidad = velocidad;
         this.numeroDePuertas = numeroDePuertas;
         this.tapizadoDeCuero = tapizadoDeCuero;
         this.aireAcondicionado = aireAcondicionado;
 
     }
+
     public Coche() {
         this.velocidad = 0;
 
@@ -67,6 +68,5 @@ public class Coche {
     public void setTapizadoDeCuero(boolean tapizadoDeCuero) {
         this.tapizadoDeCuero = tapizadoDeCuero;
     }
-
 
 }
