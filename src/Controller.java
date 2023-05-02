@@ -16,7 +16,7 @@ public class Controller {
      * @param matricula
      */
 
-    public void crearCoche(String modelo, String matricula, boolean aireAcondicionado, int numeroDePuertas, boolean tapizadoDeCuero) {
+    public void crearCoche(String modelo, String matricula, boolean aireAcondicionado, boolean numeroDePuertas, int tapizadoDeCuero) {
         Coche coche = miModelo.crearCoche(modelo, matricula, aireAcondicionado, numeroDePuertas, tapizadoDeCuero);
         if (coche != null)
             miVista.mostrarCoche(coche.modelo, coche.matricula, coche.aireAcondicionado, coche.numeroDePuertas, coche.tapizadoDeCuero);

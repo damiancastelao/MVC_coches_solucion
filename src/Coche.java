@@ -5,16 +5,18 @@ public class Coche {
      boolean aireAcondicionado;
      int numeroDePuertas;
      boolean tapizadoDeCuero;
-    public Coche(String modelo, String matricula,boolean aireAcondicionado, int numeroDePuertas, boolean tapizadoDeCuero) {
+    public Coche(String modelo, String matricula,boolean aireAcondicionado, boolean tapizadoDeCuero,int numeroDePuertas) {
         this.modelo = modelo;
         this.matricula = matricula;
         this.velocidad = velocidad;
-        this.aireAcondicionado = aireAcondicionado;
         this.numeroDePuertas = numeroDePuertas;
         this.tapizadoDeCuero = tapizadoDeCuero;
+        this.aireAcondicionado = aireAcondicionado;
 
     }
     public Coche() {
+        this.velocidad = 0;
+
 
     }
 

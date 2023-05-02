@@ -28,8 +28,12 @@ public class Iu {
         buttonCrearCoche.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                controller.crearCoche (textFielMatricula.getText(),textFieldModelo.getText(),comboBoxAire.isEditable(),comboBoxTapizado.getItemCount(),textFieldNumeropuertas.isValidateRoot());
+                String matricula = textFielMatricula.getText();
+                String modelo = textFieldModelo.getText();
+                boolean tieneAireAcondicionado =  Boolean.parseBoolean((String) comboBoxAire.getSelectedItem());
+                boolean tieneTapizado = Boolean.parseBoolean((String) comboBoxTapizado.getSelectedItem());
+                int numeroPuertas = Integer.parseInt(textFieldNumeropuertas.getText());
+                controller.crearCoche(matricula, modelo, tieneAireAcondicionado, tieneTapizado, numeroPuertas);
             }
         });
 
@@ -45,9 +49,7 @@ public class Iu {
     }
 
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
+
 }
 
 

@@ -9,8 +9,8 @@ public class Model {
      * Crea un coche y lo mete en el parking
      * @return el coche creado
      */
- public Coche crearCoche(String modelo, String matricula, boolean aireAcondicionado, int numeroDePuertas, boolean tapizadoDeCuero) {
-     coche= new Coche ( modelo,  matricula,  aireAcondicionado,  numeroDePuertas,  tapizadoDeCuero);
+ public Coche crearCoche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas) {
+     coche= new Coche ( modelo,  matricula,  aireAcondicionado, tapizadoDeCuero, numeroDePuertas);
      parking.add(coche);
 
      return coche;
