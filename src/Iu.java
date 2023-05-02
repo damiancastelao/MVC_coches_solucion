@@ -9,6 +9,13 @@ public class Iu {
     private JTextField textFieldModelo;
     private JPanel panelIu;
     private JLabel lblModelo;
+    private JComboBox comboBoxAire;
+    private JComboBox comboBoxTapizado;
+    private JTextField textFieldNumeropuertas;
+    private JLabel lblMatricula;
+    private JLabel JlbAire;
+    private JLabel JlbNumeroPuertas;
+    private JLabel JlbTapizado;
 
 
     public Iu() {
@@ -19,7 +26,7 @@ public class Iu {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                controller.crearCoche (textFielMatricula.getText(),textFieldModelo.getText());
+                controller.crearCoche (textFielMatricula.getText(),textFieldModelo.getText(),comboBoxAire.isEditable(),comboBoxTapizado.getItemCount(),textFieldNumeropuertas.isValidateRoot());
             }
         });
 

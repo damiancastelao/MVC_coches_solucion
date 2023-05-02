@@ -6,8 +6,7 @@ public class Dialogo  extends JDialog {
     private  JTextField textFieldmensaje;
 
 
-
-        public Dialogo() {
+    public Dialogo() {
             setContentPane(panelDialogo);
             setModal(true);
 
@@ -31,4 +30,6 @@ public class Dialogo  extends JDialog {
 
 
         }
+
+
 }
