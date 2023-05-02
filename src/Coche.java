@@ -1,14 +1,14 @@
 public class Coche {
     String matricula;
     String modelo;
-    Integer velocidad;
+    int  velocidad;
      boolean aireAcondicionado;
      int numeroDePuertas;
      boolean tapizadoDeCuero;
-    public Coche(String modelo, String matricula,boolean aireAcondicionado, int numeroDePuertas, boolean tapizadoDeCuero) {
+    public Coche(String modelo, String matricula,Integer velocidad,boolean aireAcondicionado, int numeroDePuertas, boolean tapizadoDeCuero) {
         this.modelo = modelo;
         this.matricula = matricula;
-        this.velocidad = 0;
+        this.velocidad = velocidad;
         this.aireAcondicionado = aireAcondicionado;
         this.numeroDePuertas = numeroDePuertas;
         this.tapizadoDeCuero = tapizadoDeCuero;
@@ -76,7 +76,6 @@ public class Coche {
                         " numeroDePuertas = " + numeroDePuertas + "\n" +
                         " tapizadoDeCuero = " + tapizadoDeCuero + "\n" +
                         " matricula = " + matricula + "\n" +
-                        " velocidad = " + velocidad + "\n" +
                         " fabricar = " + modelo + "\n";
 
     }
