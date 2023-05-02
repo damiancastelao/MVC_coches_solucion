@@ -25,7 +25,7 @@
           <iconTextGap value="15"/>
           <inheritsPopupMenu value="true"/>
           <opaque value="false"/>
-          <text value="Modelo:"/>
+          <text value="Matricula:"/>
         </properties>
       </component>
       <component id="8c508" class="javax.swing.JLabel" binding="lblMatricula">
@@ -34,7 +34,7 @@
         </constraints>
         <properties>
           <iconTextGap value="10"/>
-          <text value="Matricula:"/>
+          <text value="Modelo:"/>
         </properties>
       </component>
       <component id="4f1eb" class="javax.swing.JTextField" binding="textFielMatricula">
@@ -95,7 +95,7 @@
           <foreground color="-7815729"/>
           <model>
             <item value="Opcion:"/>
-            <item value="Si "/>
+            <item value="Si"/>
             <item value="No"/>
           </model>
           <requestFocusEnabled value="false"/>

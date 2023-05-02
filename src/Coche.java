@@ -15,11 +15,6 @@ public class Coche {
 
     }
     public Coche() {
-        numeroDePuertas = 2;
-        matricula = "325295BC";
-        aireAcondicionado = false;
-        tapizadoDeCuero=false;
-
 
     }
 
