@@ -15,10 +15,10 @@ public class Coche {
 
     }
     public Coche() {
-        numeroDePuertas = 4;
+        numeroDePuertas = 2;
         matricula = "325295BC";
         aireAcondicionado = true;
-        modelo = null;
+
 
     }
 
@@ -68,7 +68,9 @@ public class Coche {
 
     public void setTapizadoDeCuero(boolean tapizadoDeCuero) {
         this.tapizadoDeCuero = tapizadoDeCuero;
-    }@Override
+    }
+
+    @Override
     public String toString() {
         return
 

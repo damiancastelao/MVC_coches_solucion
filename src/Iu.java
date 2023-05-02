@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 public class Iu {
     static Controller controller ;
+    static BuilderCoche builder;
     private JButton buttonCrearCoche;
     private JTextField textFielMatricula;
     private JTextField textFieldModelo;
@@ -21,6 +22,8 @@ public class Iu {
     public Iu() {
 
         controller = new Controller();
+        builder = new BuilderCoche();
+
 
         buttonCrearCoche.addActionListener(new ActionListener() {
             @Override

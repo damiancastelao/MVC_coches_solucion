@@ -17,7 +17,7 @@ public class View {
      */
 
     boolean mostrarCoche(String modelo, String matricula,boolean aireAcondicionado, int numeroDePuertas, boolean tapizadoDeCuero) {
-        String mensaje = "Modelo " + modelo + "Con matricula  " + matricula + "km/h" + "Aire Acondicionado:" + aireAcondicionado + "Numero de puertas" +numeroDePuertas+ "Tapizado de cuero:" + tapizadoDeCuero ;
+        String mensaje = "Modelo  " + modelo + "\n\nCon matricula  " + matricula  + "\n\nAire Acondicionado:" + aireAcondicionado + "\n\nNumero de puertas" +numeroDePuertas+ "\n\nTapizado de cuero:" + tapizadoDeCuero ;
         System.out.println(mensaje);
         Dialogo.mostrarMensaje(mensaje);
         return true;

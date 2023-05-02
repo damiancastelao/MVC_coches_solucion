@@ -23,7 +23,7 @@ public class Dialogo  extends JDialog {
             // actualizamos mensaje
             dialog.textFieldmensaje.setText(msg);
             dialog.setDefaultCloseOperation(HIDE_ON_CLOSE);
-            dialog.setBounds(600, 300, 500, 300);
+            dialog.setBounds(600, 300, 800, 700);
             dialog.setVisible(true);
 
 
