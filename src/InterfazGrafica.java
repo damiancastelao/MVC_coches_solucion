@@ -10,6 +10,9 @@ public class InterfazGrafica {
     private JTextField matricula;
     static Controller miControlador;
 
+    /**
+     * Constructor del entorno gráfico para el usuario
+     */
     public InterfazGrafica() {
         miControlador = new Controller();
         bCrearCoche.addActionListener(new ActionListener() {
@@ -19,6 +22,10 @@ public class InterfazGrafica {
             }
         });
     }
+
+    /**
+     * Inicializa la IU del usuario
+     */
     public static void crearVentana(){
         app = new JFrame("App MVC");
         app.setContentPane(new InterfazGrafica().panel);
