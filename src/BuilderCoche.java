@@ -8,11 +8,16 @@ public class BuilderCoche {
         _coche = new Coche();
     }
 
+    public BuilderCoche setVelocidad(int velocidad) {
+        _coche.setVelocidad(velocidad);
+        return this;
+    }
 
     public BuilderCoche setTapizadoDeCuero(boolean tapizadoDeCuero) {
         _coche.setTapizadoDeCuero(tapizadoDeCuero);
         return this;
     }
+
     public BuilderCoche setMatricula(String matricula) {
         _coche.setMatricula(matricula);
         return this;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Iu">
-  <grid id="27dc6" binding="panelIu" layout-manager="GridLayoutManager" row-count="8" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panelIu" layout-manager="GridLayoutManager" row-count="11" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="24" y="20" width="474" height="249"/>
+      <xy x="24" y="20" width="532" height="468"/>
     </constraints>
     <properties>
       <background color="-3233585"/>
@@ -16,7 +16,7 @@
     <children>
       <component id="3efcf" class="javax.swing.JLabel" binding="lblModelo">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="2" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <enabled value="true"/>
@@ -30,21 +30,9 @@
           <text value="Matricula:"/>
         </properties>
       </component>
-      <component id="4f1eb" class="javax.swing.JTextField" binding="textFielMatricula">
-        <constraints>
-          <grid row="0" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <columns value="15"/>
-          <horizontalAlignment value="0"/>
-          <text value=""/>
-        </properties>
-      </component>
       <component id="ff462" class="javax.swing.JLabel" binding="JlbAire">
         <constraints>
-          <grid row="2" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <foreground color="-16777216"/>
@@ -69,29 +57,9 @@
           <text value="Tapizado de cuero:"/>
         </properties>
       </component>
-      <component id="2fb" class="javax.swing.JTextField" binding="textFieldModelo">
-        <constraints>
-          <grid row="1" column="4" row-span="2" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <columns value="15"/>
-          <horizontalAlignment value="0"/>
-        </properties>
-      </component>
-      <component id="6b81f" class="javax.swing.JButton" binding="buttonCrearCoche">
-        <constraints>
-          <grid row="7" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <horizontalTextPosition value="2"/>
-          <text value="Crear"/>
-        </properties>
-      </component>
       <component id="acd61" class="javax.swing.JTextField" binding="textFieldNumeropuertas">
         <constraints>
-          <grid row="5" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+          <grid row="5" column="4" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -113,7 +81,7 @@
       </component>
       <component id="cb843" class="javax.swing.JCheckBox" binding="checkBoxAire">
         <constraints>
-          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="3" use-parent-layout="false"/>
+          <grid row="4" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="3" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value=""/>
@@ -121,10 +89,103 @@
       </component>
       <component id="79b52" class="javax.swing.JCheckBox" binding="checkBoxpuerta">
         <constraints>
-          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="3" use-parent-layout="false"/>
+          <grid row="6" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="3" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value=""/>
+        </properties>
+      </component>
+      <component id="298f1" class="javax.swing.JButton" binding="buttonAumentar">
+        <constraints>
+          <grid row="7" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="3" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="+"/>
+        </properties>
+      </component>
+      <component id="8ef42" class="javax.swing.JButton" binding="buttonDisminuir">
+        <constraints>
+          <grid row="8" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="3" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="-"/>
+        </properties>
+      </component>
+      <component id="80aba" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Aumentar velocidad:"/>
+        </properties>
+      </component>
+      <component id="fe791" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Disminuir velocidad:"/>
+        </properties>
+      </component>
+      <component id="4294f" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Velocidad:"/>
+        </properties>
+      </component>
+      <component id="793c9" class="javax.swing.JTextField" binding="textFieldVelocidad">
+        <constraints>
+          <grid row="9" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="3" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="6b81f" class="javax.swing.JButton" binding="buttonCrearCoche">
+        <constraints>
+          <grid row="10" column="5" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="2" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <horizontalTextPosition value="2"/>
+          <text value="Crear"/>
+        </properties>
+      </component>
+      <component id="4f1eb" class="javax.swing.JTextField" binding="textFielMatricula">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <columns value="15"/>
+          <horizontalAlignment value="0"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="2fb" class="javax.swing.JTextField" binding="textFieldModelo">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <columns value="15"/>
+          <horizontalAlignment value="0"/>
+        </properties>
+      </component>
+      <component id="d22dc" class="javax.swing.JButton" binding="Buttonsalir">
+        <constraints>
+          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Salir"/>
         </properties>
       </component>
     </children>

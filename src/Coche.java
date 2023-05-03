@@ -6,64 +6,44 @@ public class Coche {
     int numeroDePuertas;
     boolean tapizadoDeCuero;
 
-    public Coche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas) {
+    public Coche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas, int velocidad) {
         this.modelo = modelo;
         this.matricula = matricula;
         this.numeroDePuertas = numeroDePuertas;
         this.tapizadoDeCuero = tapizadoDeCuero;
         this.aireAcondicionado = aireAcondicionado;
+        this.velocidad = velocidad;
 
     }
 
     public Coche() {
-        this.velocidad = 0;
 
 
     }
-
-    public String getMatricula() {
-        return matricula;
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
     }
+
 
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 
-    public String getModelo() {
-        return modelo;
-    }
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
-    public Integer getVelocidad() {
-        return velocidad;
-    }
-
-    public void setVelocidad(Integer velocidad) {
-        this.velocidad = velocidad;
-    }
-
-    public boolean isAireAcondicionado() {
-        return aireAcondicionado;
-    }
 
     public void setAireAcondicionado(boolean aireAcondicionado) {
         this.aireAcondicionado = aireAcondicionado;
     }
 
-    public int getNumeroDePuertas() {
-        return numeroDePuertas;
-    }
 
     public void setNumeroDePuertas(int numeroDePuertas) {
         this.numeroDePuertas = numeroDePuertas;
     }
 
-    public boolean isTapizadoDeCuero() {
-        return tapizadoDeCuero;
-    }
 
     public void setTapizadoDeCuero(boolean tapizadoDeCuero) {
         this.tapizadoDeCuero = tapizadoDeCuero;

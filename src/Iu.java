@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 
 public class Iu {
     static Controller controller ;
-    static BuilderCoche builder;
     private JButton buttonCrearCoche;
     private JTextField textFielMatricula;
     private JTextField textFieldModelo;
@@ -18,15 +17,14 @@ public class Iu {
     private JLabel JlbTapizado;
     private JCheckBox checkBoxAire;
     private JCheckBox checkBoxpuerta;
-
-
+    private JButton buttonAumentar;
+    private JButton buttonDisminuir;
+    private JTextField textFieldVelocidad;
+    private JButton Buttonsalir;
 
     public Iu() {
 
         controller = new Controller();
-        builder = new BuilderCoche();
-
-
         buttonCrearCoche.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -35,13 +33,36 @@ public class Iu {
                 boolean  tieneAireAcondicionado =  checkBoxAire.isSelected();
                 boolean tieneTapizado = checkBoxpuerta.isSelected();
                 int numeroPuertas = Integer.parseInt(textFieldNumeropuertas.getText());
-                controller.crearCoche(matricula, modelo, tieneAireAcondicionado, tieneTapizado, numeroPuertas);
+                int  velocidad = Integer.parseInt(textFieldVelocidad.getText());
+
+                controller.crearCoche(modelo, matricula, tieneAireAcondicionado, tieneTapizado, numeroPuertas,velocidad);
             }
         });
-
+        buttonAumentar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int nuevaVelocidad = controller.aumentarVelocidad(textFielMatricula.getText(),10 );
+                textFieldVelocidad.setText(String.valueOf(nuevaVelocidad));
+            }
+        });
+        buttonDisminuir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int nuevaVelocidad = controller.disminuirVelocidad(textFielMatricula.getText(),10 );
+                textFieldVelocidad.setText(String.valueOf(nuevaVelocidad));
+            }
+        });
+        Buttonsalir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
     }
 
-
+    /**
+     * Metodos en donde creamos la ventana
+     */
     public static void crearVentana(){
         JFrame jframe = new JFrame("App ");
         jframe.setContentPane(new Iu().panelIu);
@@ -50,9 +71,6 @@ public class Iu {
         jframe.setVisible(true);
         jframe.setBounds(500, 200, 500, 350);
     }
-
-
-
 }
 
 
