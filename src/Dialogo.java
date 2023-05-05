@@ -16,5 +16,4 @@ public class Dialogo extends JDialog {
         dialog.mensaje.setText(mensaje);
         dialog.setVisible(true);
     }
-
 }

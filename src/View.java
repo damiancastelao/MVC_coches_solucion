@@ -2,7 +2,7 @@ public class View {
     /**
      * Constructor crear ventana
      */
-    public View() {
+    public static void View() {
         InterfazGrafica.crearVentana();
     }
 
@@ -12,7 +12,7 @@ public class View {
      * @param v velocidad a mostrar
      * @return true cuando es correcto
      */
-    boolean muestraVelocidad(String matricula, Integer v) {
+    public static boolean muestraVelocidad(String matricula, Integer v) {
         String mensaje = "Coche " + matricula + " velocidad: " + v + "km/h";
         System.out.println(mensaje);
         Dialogo.main(mensaje);

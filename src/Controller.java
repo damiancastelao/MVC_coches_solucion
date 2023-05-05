@@ -1,15 +1,23 @@
 public class Controller {
-    static Model miModelo;
-    static View miVista;
-
     public static void main(String[] args) {
-        miModelo = new Model();
-        miVista = new View();
+        View.View();
+            }
+
+    public static void bCrearCoche(String modelo, String matricula) {
+        Coche aux = Model.crearCoche(modelo, matricula);
+        if (aux != null) View.muestraVelocidad(aux.matricula, aux.velocidad);
     }
 
-    public void bCrearCoche(String modelo, String matricula) {
-        Coche aux = miModelo.crearCoche(modelo, matricula);
-        if (aux != null) miVista.muestraVelocidad(aux.matricula, aux.velocidad);
+    public static Integer bAumentarVelocidad(String matricula, Integer v){
+        Integer aux= Model.subirVelocidad(matricula, v);
+        if (aux != null) View.muestraVelocidad(matricula, v);
+        return aux;
+    }
+
+    public static Integer bReducirVelocidad(String matricula, Integer v){
+        Integer aux= Model.bajarVelocidad(matricula,v);
+        if (aux != null) View.muestraVelocidad(matricula, v);
+        return aux;
     }
 
         /*
