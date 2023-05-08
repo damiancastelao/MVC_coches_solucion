@@ -24,15 +24,13 @@ public class InterfazGrafica {
         aumentarVelocidad.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Integer nuevaVelocidad= Controller.bAumentarVelocidad(matricula.getText(), 10);
-                nuevaVelocidad.toString();
+                Controller.bAumentarVelocidad(matricula.getText(), 10);
             }
         });
         bajarVelocidad.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Integer nuevaVelocidad=Controller.bReducirVelocidad(matricula.getText(), 10);
-                nuevaVelocidad.toString();
+                Controller.bReducirVelocidad(matricula.getText(), 10);
             }
         });
     }

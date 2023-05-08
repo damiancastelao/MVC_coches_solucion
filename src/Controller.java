@@ -10,13 +10,13 @@ public class Controller {
 
     public static Integer bAumentarVelocidad(String matricula, Integer v){
         Integer aux= Model.subirVelocidad(matricula, v);
-        if (aux != null) View.muestraVelocidad(matricula, v);
+        if (aux != null) View.muestraVelocidad(matricula, aux);
         return aux;
     }
 
     public static Integer bReducirVelocidad(String matricula, Integer v){
         Integer aux= Model.bajarVelocidad(matricula,v);
-        if (aux != null) View.muestraVelocidad(matricula, v);
+        if (aux != null) View.muestraVelocidad(matricula, aux);
         return aux;
     }
 
