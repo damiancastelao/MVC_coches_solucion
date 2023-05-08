@@ -1,6 +1,14 @@
 public class View {
+
+    public View(){
+        IU.crearVentana();
+    }
+
     boolean muestraVelocidad(String matricula, Integer v){
-        System.out.println(matricula + ": " + v + "km/hr");
+        String mensaje = "Coche " + matricula + " velocidad: " + v + "km/h";
+        System.out.println(mensaje);
+        Dialog.mostrarMensaje(mensaje);
+
         return true;
     }
 }

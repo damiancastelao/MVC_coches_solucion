@@ -1,32 +1,18 @@
 public class Controller {
+    static Model miModelo;
+    static View miVista;
     public static void main(String[] args) {
-        Model miModelo = new Model();
-        View miVista = new View();
+        miModelo = new Model();
+        miVista = new View();
 
-        // Crear tres coches
+        System.out.println("fin");
+    }
 
-        miModelo.crearCoche("LaFerrari", "SBC 1234");
-        miModelo.crearCoche("Alpine", "HYU 4567");
-        miModelo.crearCoche("Aston Martin", "FGH 3333");
 
-        Coche ferrari = miModelo.getCoche("SBC 1234");
-
-        // modifica la velocidad
-        miModelo.cambiarVelocidad("SBC 1234", 30);
-        //recoge velocidad y la muestra (tarea de la View)
-        boolean hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
-        System.out.println(hecho);
-
-        // aumenta la velocidad
-        miModelo.subirVelocidad("SBC 1234",150);
-        //recoge velocidad y la muestra (tarea de la View)
-        hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
-        System.out.println(hecho);
-
-        // disminuye la velocidad
-        miModelo.bajarVelocidad("SBC 1234",100);
-        // recoje la velocidad y la muestra (tarea de la View)
-        hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
-        System.out.println(hecho);
+    public static void crearCoche(String modelo,String matricula){
+        Coche obx=miModelo.crearCoche(modelo,matricula);
+        if (obx!=null){
+            miVista.muestraVelocidad(obx.matricula, obx.velocidad);
+        }
     }
 }
