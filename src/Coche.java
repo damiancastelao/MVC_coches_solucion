@@ -49,4 +49,29 @@ public class Coche {
         this.tapizadoDeCuero = tapizadoDeCuero;
     }
 
+    public String getModelo() {
+        return modelo;
+    }
+
+    public boolean isAireAcondicionado() {
+        return aireAcondicionado;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public int getNumeroDePuertas() {
+        return numeroDePuertas;
+    }
+
+    public boolean isTapizadoDeCuero() {
+        return tapizadoDeCuero;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+
 }

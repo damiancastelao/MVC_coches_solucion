@@ -21,6 +21,7 @@ public class Iu {
     private JButton buttonDisminuir;
     private JTextField textFieldVelocidad;
     private JButton Buttonsalir;
+    private JButton BuscarButton;
 
     public Iu() {
 
@@ -33,9 +34,11 @@ public class Iu {
                 boolean  tieneAireAcondicionado =  checkBoxAire.isSelected();
                 boolean tieneTapizado = checkBoxpuerta.isSelected();
                 int numeroPuertas = Integer.parseInt(textFieldNumeropuertas.getText());
-                int  velocidad = Integer.parseInt(textFieldVelocidad.getText());
+                int  velocidad = Integer.parseInt(textFieldVelocidad.getText()) ;
+
 
                 controller.crearCoche(modelo, matricula, tieneAireAcondicionado, tieneTapizado, numeroPuertas,velocidad);
+
             }
         });
         buttonAumentar.addActionListener(new ActionListener() {
@@ -58,8 +61,26 @@ public class Iu {
                 System.exit(0);
             }
         });
-    }
+        
+            BuscarButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
 
+                    Coche cocheEncontrado = controller.buscar(textFielMatricula.getText());
+                    if (cocheEncontrado != null) {
+                        textFieldModelo.setText(cocheEncontrado.getModelo());
+                        checkBoxAire.setSelected(cocheEncontrado.isAireAcondicionado());
+                        checkBoxpuerta.setSelected(cocheEncontrado.isTapizadoDeCuero());
+                        textFieldNumeropuertas.setText(String.valueOf(cocheEncontrado.getNumeroDePuertas()));
+                        textFieldVelocidad.setText(String.valueOf(cocheEncontrado.getVelocidad()));
+
+                    } else {
+
+                        JOptionPane.showMessageDialog(null,"No se encontró ningún coche con la matrícula " + textFielMatricula.getText());
+                    }
+                }
+            });
+    }
     /**
      * Metodos en donde creamos la ventana
      */

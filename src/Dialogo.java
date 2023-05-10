@@ -3,13 +3,14 @@ import javax.swing.*;
 public class Dialogo  extends JDialog {
     private JPanel panelDialogo;
     private static Dialogo instance;
-    private  JTextField textFieldmensaje;
+    private  JTextField textAreatexto;
 
 
     private Dialogo() {
 
         setContentPane(panelDialogo);
         setModal(true);
+
 
     }
 
@@ -33,9 +34,16 @@ public class Dialogo  extends JDialog {
             Dialogo dialog = getInstance();
             dialog.pack();
             // actualizamos mensaje
-            dialog.textFieldmensaje.setText(msg);
+            dialog.textAreatexto.setText(msg);
             dialog.setDefaultCloseOperation(HIDE_ON_CLOSE);
             dialog.setBounds(500, 200, 800, 350);
             dialog.setVisible(true);
+
+
+
+
+
         }
+
+
 }

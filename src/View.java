@@ -16,10 +16,13 @@ public class View {
      */
 
     boolean mostrarCoche(String modelo, String matricula,boolean aireAcondicionado,boolean tapizadoDeCuero, int numeroDePuertas, int velocidad ) {
-        String mensaje = "Modelo : " + modelo + "\n\nCon matricula: " + matricula  + "\n\nAire Acondicionado: " + aireAcondicionado + "\n\nNumero de puertas : " + numeroDePuertas + "\n\nTapizado de cuero: "
-                + tapizadoDeCuero +"\n\n LA velocidad es :"+ velocidad;
+
+        String mensaje = "Modelo : " + modelo + "\nCon matricula: " + matricula  + "\nAire Acondicionado: " + aireAcondicionado + "\nNumero de puertas : " + numeroDePuertas + "\nTapizado de cuero: "
+                + tapizadoDeCuero +"\nLA velocidad es :"+ velocidad;
+
         System.out.println(mensaje);
         Dialogo.mostrarMensaje(mensaje);
+
         return true;
     }
 }

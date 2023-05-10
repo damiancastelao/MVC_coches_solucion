@@ -17,27 +17,21 @@
     </clientProperties>
     <border type="none"/>
     <children>
-      <component id="e5698" class="javax.swing.JTextField" binding="textFieldmensaje">
+      <component id="c397d" class="javax.swing.JTextField" binding="textAreatexto">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
         </constraints>
         <properties>
-          <alignmentX value="1.0"/>
-          <alignmentY value="1.0"/>
-          <autoscrolls value="true"/>
-          <columns value="75"/>
-          <doubleBuffered value="false"/>
-          <dragEnabled value="false"/>
+          <background color="-3233585"/>
+          <caretColor color="-16777216"/>
+          <editable value="false"/>
+          <foreground color="-16777216"/>
           <horizontalAlignment value="0"/>
-          <inheritsPopupMenu value="true"/>
-          <margin top="2" left="6" bottom="2" right="6"/>
-          <minimumSize width="80" height="100"/>
-          <nextFocusableComponent value="e5698"/>
           <text value=""/>
+          <toolTipText value=""/>
         </properties>
-        <clientProperties>
-          <html.disable class="java.lang.Boolean" value="true"/>
-        </clientProperties>
       </component>
     </children>
   </grid>
