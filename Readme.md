@@ -13,6 +13,13 @@ Modifica el diagrama de clases y secuencia
 realiza un pull request al repositorio original
 
 
+
+SUBIR Y BAJAR
+---
+EL PROXIMO cambio realizado son dos metodos de subir y bajar velocidad, para esto en la Interfaz de Usuario,
+añadimos dos botones uno de subir la velocidad en 10kmh y otro par abajar la velocidad en 10kmh
+
+
 ---
 ## Diagrama de clases:
 
