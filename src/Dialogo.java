@@ -5,6 +5,9 @@ public class Dialogo extends JDialog {
     private JPanel panel1;
     private JLabel eVelocidad;
 
+    /**
+     * Constructor de la clase Dialogo para instanciar componentes
+     */
     public Dialogo() {
         setContentPane(panel1);
         setModal(true);
@@ -13,12 +16,12 @@ public class Dialogo extends JDialog {
 
     /**
      * Metodo en el que instancio ventana
-     * @param mensaje la velocidad que ponga el usuario
+     *
      */
-    public static void ventanaDialogo(String mensaje) {
+    public static void ventanaDialogo() {
         Dialogo dialogo = new Dialogo();
         dialogo.pack();
-        dialogo.eVelocidad.setText(mensaje);
+        dialogo.eVelocidad.setText("COCHES");
         dialogo.setVisible(true);
 
     }
