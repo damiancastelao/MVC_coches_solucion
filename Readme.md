@@ -60,11 +60,11 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    Controller->>Model: bajarVelocidad("SBC 1234", 25)
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>+View: muestraVelocidad("SBC 1234", velocidad)
     activate View
     View->>-View: System.out.println()
     View-->>Controller: boolean
