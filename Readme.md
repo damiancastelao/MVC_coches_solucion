@@ -76,7 +76,8 @@ sequenceDiagram
 ```
 
 
-El mismo diagrama con los nombres de los métodos
+El mismo diagrama con los nombres de los métodos:
+
 
 ```mermaid
 sequenceDiagram
@@ -119,4 +120,5 @@ sequenceDiagram
     View->>-View: System.out.println()
     View-->>Controller: boolean
     deactivate View
+  
 ```
