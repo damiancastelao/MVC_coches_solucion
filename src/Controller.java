@@ -1,5 +1,26 @@
 public class Controller {
     public static void main(String[] args) {
+        View.View();
+    }
+
+    public static void crearButton(String modelo, String matricula) {
+        Coche aux = Model.crearCoche(modelo, matricula);
+        if (aux != null) View.muestraVelocidad(aux.matricula, aux.velocidad);
+    }
+
+    public static Integer subirButton(String matricula, Integer v) {
+        Integer aux = Model.subirVelocidad(matricula, v);
+        if (aux != null) View.muestraVelocidad(matricula, aux);
+        return aux;
+    }
+    public static Integer bajarButton(String matricula, Integer v) {
+        Integer aux = Model.bajarVelocidad(matricula, v);
+        if (aux != null) View.muestraVelocidad(matricula, aux);
+        return aux;
+    }
+
+
+        /*
         Model miModelo = new Model();
         View miVista = new View();
 
@@ -21,5 +42,5 @@ public class Controller {
         boolean hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
 
         System.out.println(hecho);
-    }
+        */
 }
