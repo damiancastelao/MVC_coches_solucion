@@ -21,6 +21,8 @@ classDiagram
           +crearCoche(String, String, String)
           +getCoche(String)
           +cambiarVelocidad(String, Integer)
+          +subirVelocidad(String, Integer)
+          +bajarVelocidad(String, Integer)
           +getVelocidad(String)
       }
     Controller "1" *-- "1" Model : association
@@ -50,6 +52,24 @@ sequenceDiagram
     View->>-View: Mostrando velocidad
     View-->>Controller: Listo!
     deactivate View
+    Controller->>Model: Puedes aumenterle la velocidad?
+    activate Model
+    Model-->>Controller: Subida!
+    deactivate Model
+    Controller->>+View: Muestra la velocidad, porfa
+    activate View
+    View->>-View: Mostrando velocidad
+    View-->>Controller: Listo!
+    deactivate View
+    Controller->>Model: Puedes bajarle la velocidad?
+    activate Model
+    Model-->>Controller: Bajada!
+    deactivate Model
+    Controller->>+View: Muestra la velocidad, porfa
+    activate View
+    View->>-View: Mostrando velocidad
+    View-->>Controller: Listo!
+    deactivate View
 ```
 
 El mismo diagrama con los nombres de los métodos
@@ -59,13 +79,41 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    Controller->>Model: crearCoche("LaFerrari", "SBC 1234")
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>+View: muestraVelocidad("SBC 1234", velocidad)
     activate View
     View->>-View: System.out.println()
     View-->>Controller: boolean
     deactivate View
+    Controller->>Model: cambiarVelocidad("SBC 1234", velocidadSubir)
+    activate Model
+    Model-->>Controller: Velocidad
+    deactivate Model
+    Controller->>+View: muestraVelocidad("SBC 1234", velocidad)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+    deactivate View
+    Controller->>Model: subirVelocidad("SBC 1234", velocidadSubir)
+    activate Model
+    Model-->>Controller: Velocidad
+    deactivate Model
+    Controller->>+View: muestraVelocidad("SBC 1234", velocidad)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+    deactivate View
+    Controller->>Model: bajarVelocidad("SBC 1234", velocidadSubir)
+    activate Model
+    Model-->>Controller: Velocidad
+    deactivate Model
+    Controller->>+View: muestraVelocidad("SBC 1234", velocidad)
+    activate View
+    View->>-View: System.out.println()
+    View-->>Controller: boolean
+    deactivate View
+    
 ```
