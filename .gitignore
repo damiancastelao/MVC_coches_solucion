@@ -1,5 +1,6 @@
 # Project exclude paths
 /out/
+ex3
 /shelf/
 /workspace.xml
 .idea
@@ -8,3 +9,7 @@ controller.iml
 *.iml
 .idea/MVC_coches-1.iml
 MVC_coches-1.iml
+
+*.iml
+.idea
+ master

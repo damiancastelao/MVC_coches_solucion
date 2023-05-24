@@ -10,6 +10,7 @@ public class Model {
      *
      * @return coche
      */
+
     public Coche crearCoche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas, int velocidad) {
 
         Coche coche = builder.setModelo(modelo)
@@ -22,6 +23,12 @@ public class Model {
         parking.add(coche);
         return coche;
 
+
+    public static Coche crearCoche(String modelo, String matricula){
+        Coche aux = new Coche(modelo, matricula);
+        parking.add(aux);
+        return aux;
+
     }
 
     /**
@@ -30,7 +37,11 @@ public class Model {
      * @param matricula a buscarCoche
      * @return chche o null si no existe
      */
+
     public Coche getCoche(String matricula) {
+
+    public static Coche getCoche(String matricula){
+        Coche aux = null;
 
         // recorre el array buscando por matricula
         for (Coche coche : parking) {
@@ -46,7 +57,11 @@ public class Model {
      * @param velocidadTotal nueva velocidad
      * @return velocidad modificada
      */
+
     public Integer cambiarVelocidad(String matricula, Integer velocidadTotal) {
+
+    public static Integer cambiarVelocidad(String matricula, Integer v) {
+
         // busca el coche
         Coche coche = getCoche(matricula);
         coche.velocidad = velocidadTotal;
@@ -60,6 +75,7 @@ public class Model {
      *
      * @param matricula coche
      */
+
     public Integer getVelocidad(String matricula) {
         Coche coche = getCoche(matricula);
         return coche.velocidad;
@@ -90,6 +106,10 @@ public class Model {
 
         // retorna la nueva velocidad
         return coche.velocidad;
+
+    public static Integer getVelocidad(String matricula) {
+        return getCoche(matricula).velocidad;
+
     }
 }
 

@@ -1,3 +1,5 @@
+import java.lang.module.ModuleDescriptor;
+
 public class Controller {
     static Model miModelo;
     static View miVista;
@@ -9,10 +11,14 @@ public class Controller {
      * @param args no usadas
      */
     public static void main(String[] args) {
+
         miModelo = new Model();
         miVista = new View();
 
+
+
     }
+
 
     /**
      * @param modelo
@@ -40,6 +46,18 @@ public class Controller {
     public int aumentarVelocidad(String matricula, int velocidad) {
         return miModelo.subirVelocidad(matricula, velocidad);
     }
+
+        Model.crearCoche("LaFerrari", "SBC 1234");
+        Model.crearCoche("Alpine", "HYU 4567");
+        Model.crearCoche("Aston Martin", "FGH 3333");
+
+        Coche ferrari = Model.getCoche("SBC 1234");
+        // modifica la velocidad
+        Model.cambiarVelocidad("SBC 1234", 30);
+
+        // recoje la velocidad y la muestra (tarea de la View)
+        boolean hecho = View.muestraVelocidad("SBC 1234", Model.getVelocidad("SBC 1234"));
+
 
     /**
      * Metodo  dismuirVelocidad
