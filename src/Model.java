@@ -45,7 +45,7 @@ public class Model {
 
 
     /**
-     * Ddevuelve la velocidad segun la matricula
+     * Devuelve la velocidad segun la matricula
      * @param matricula
      * @return
      */
@@ -70,7 +70,7 @@ public class Model {
     }
 
     /**
-     * Ddevuelve la velocidad segun la matricula
+     * Devuelve la velocidad segun la matricula
      * @param matricula
      * @return
      */
@@ -81,6 +81,8 @@ public class Model {
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
+
+
 
 
 

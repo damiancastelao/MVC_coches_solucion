@@ -43,6 +43,15 @@ public class IU {
                 Controller.aumentarVelocidad(tfMatricula.getText());
             }
         });
+
+        btBuscar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Controller.buscarCoche(tfMatricula.getText());
+            }
+        });
+
+
     }
     /**
      * Inicializa la Interfaz del Usuario
