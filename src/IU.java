@@ -11,7 +11,7 @@ public class IU {
     private JLabel eMatricula;
     private JButton button1;
     private JButton button2;
-    private JTextField textField1;
+    private JButton buscarCocheButton;
 
     public IU() {
         bCrear.addActionListener(new ActionListener() {

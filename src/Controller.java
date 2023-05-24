@@ -13,7 +13,7 @@ public class Controller {
         }
     }
 // implementamos el nuevo método buscar coche
-    public static void buscarCoche(String criterio) {
+    public static void getCoche(String criterio) {
         Coche cocheEncontrado = miModelo.buscarCoche(criterio);
         if (cocheEncontrado != null) {
             miVista.muestraDatosCoche(cocheEncontrado);
