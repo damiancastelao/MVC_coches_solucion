@@ -18,5 +18,7 @@ public class Controller {
         boolean hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
 
         System.out.println(hecho);
+
+
     }
 }

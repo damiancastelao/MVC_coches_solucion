@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Model {
+
     static ArrayList<Coche> parking = new ArrayList<>();
 
     /**
@@ -16,10 +17,21 @@ public class Model {
     }
 
     /**
-     * Busca coche segun matricula
-     * @param matricula a buscar
-     * @return chche o null si no existe
+     * @param matricula
+     * @param v nueva velocidad
+     * @return velocidad modificada
      */
+    public Integer cambiarVelocidad(String matricula, Integer v) {
+        // busca el coche
+        getCoche(matricula).velocidad = v;
+        // retorna la nueva velocidad
+        return getCoche(matricula).velocidad;
+        /**
+         * Busca coche segun matricula
+         * @param matricula a buscar
+         * @return chche o null si no existe
+         */
+    }
     public Coche getCoche(String matricula){
         Coche aux = null;
         // recorre el array buscando por matricula
@@ -68,5 +80,6 @@ public class Model {
      * @param matricula
      * @return
      */
+
 
 }
