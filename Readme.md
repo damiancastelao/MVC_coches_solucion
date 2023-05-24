@@ -1,23 +1,15 @@
-# Arquitectura MVC
+# EXAMEN 3RA EVALUACION
 
-Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
+### Enunciado
 
-### ejercicios
+El exámen tienes que hacerlo en una rama (nombre de la rama ex3) de tu proyecto de MVC coches. En el que tienes que tener implementado subir/bajar velocidad.
 
+Implementa la funcionalidad de buscar un coche dado de alta y mostrar sus datos, incluyendo la velocidad. Respeta la arquitectura MVC
 
-Crea tu rama de desarrollo
-Realiza una modificación que en vez de cambiar la velocidad, haya dos métodos:
-subirVelocidad(String matricula, Integer v), sube la velocidad en 'v' unidades
-bajarVelocidad(String matricula, Integer v), baja la velocidad en 'v' unidades
-Modifica el diagrama de clases y secuencia
-realiza un pull request al repositorio original
-
-
-
-SUBIR Y BAJAR
----
-EL PROXIMO cambio realizado son dos metodos de subir y bajar velocidad, para esto en la Interfaz de Usuario,
-añadimos dos botones uno de subir la velocidad en 10kmh y otro par abajar la velocidad en 10kmh
+    -Crea un issue exponiendo la funcionalidad
+    -Realiza las modificaciones
+    -Crea un pull Request para la rama principal
+    -Mientras codificas, documenta
 
 
 ---
