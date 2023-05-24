@@ -10,14 +10,20 @@ Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
 ```mermaid
 classDiagram
     class Coche {
-        String: matricula
-        String: modelo
-        Integer: velocidad
+    String matricula;
+    String modelo;
+    int velocidad;
+    boolean aireAcondicionado;
+    int numeroDePuertas;
+    boolean tapizadoDeCuero;
     }
       class Controller{
-          +main()
+      crearCoche(String , String , boolean , boolean , int , int ) 
+      aumentarVelocidad(String , int ) 
+      disminuirVelocidad(String , int )
+         Coche  buscar(String )
       }
-      class View {+muestraVelocidad(String, Integer)}
+      class View { mostrarCoche(String , String ,boolean ,boolean , int , int  )}
       class Model {
           ArrayList~Coche~: parking
           +crearCoche(String, String, String)
@@ -26,9 +32,9 @@ classDiagram
           +getVelocidad(String)
       }
       
-      class IU { mostrarVentana()}
+      class IU { crearVentana()}
       
-      class Dialog { mostrarVelocidad() }
+      class Dialog { mostrarMensaje() }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association

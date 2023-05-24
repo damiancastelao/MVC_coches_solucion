@@ -52,6 +52,13 @@ public class Controller {
     public int disminuirVelocidad(String matricula, int velocidad) {
         return miModelo.bajarVelocidad(matricula, velocidad);
     }
+
+    /**
+     * Busca un objeto Coche en base a una matrícula específica.
+     *
+     * @param matricula La matrícula del coche que se desea buscar.
+     * @return El objeto Coche correspondiente a la matrícula especificada, o null si no se encuentra.
+     */
     public Coche  buscar(String matricula) {
         return miModelo.getCoche(matricula);
     }
