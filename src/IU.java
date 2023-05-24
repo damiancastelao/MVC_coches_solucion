@@ -31,6 +31,7 @@ public class IU {
                 Controller.aumentarVelocidad(tMatricula.getText());
             }
         });
+
     }
 
     public static void crearVentana() {

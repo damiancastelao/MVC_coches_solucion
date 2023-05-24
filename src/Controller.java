@@ -31,4 +31,17 @@ public class Controller {
     public static void aumentarVelocidad(String matricula){
         miModelo.subirVelocidad(matricula);
     }
+
+    /**
+     *
+     * @param matricula Del coche a buscar
+     */
+    public static void buscarCoche(String matricula){
+        //Usamos coche auxiliar para guardar el coche obtenido en la busqueda
+        Coche aux = miModelo.getCoche(matricula);
+        if(aux != null){
+            miVista.mostrarCoche(aux);
+        }
+    }
+
 }
