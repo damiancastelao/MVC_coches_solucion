@@ -17,5 +17,7 @@ public class Controller {
         boolean hecho = View.muestraVelocidad("SBC 1234", Model.getVelocidad("SBC 1234"));
 
         System.out.println(hecho);
+
+        System.out.println("Prueba");
     }
 }
