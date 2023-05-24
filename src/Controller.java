@@ -10,8 +10,8 @@ public class Controller {
         // subir la velocidad en 30 unidades
         ferrari.subirVelocidad(30);
 
-        // muestra la velocidad (tarea de la View)
-        boolean hecho = View.muestraVelocidad("SBC 1234", ferrari.getVelocidad());
+        // muestra la velocidad y los datos del coche (tarea de la View)
+        boolean hecho = View.muestraCoche(ferrari);
 
         System.out.println(hecho);
     }
