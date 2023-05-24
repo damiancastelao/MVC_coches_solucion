@@ -14,14 +14,23 @@ classDiagram
     }
       class Controller{
           +main()
+          +crearCoche(String, String)
+          +subirVelocidad(String)
+          +bajarVelocidad(String)
+          +buscarCoche(String)
       }
-      class View {+muestraVelocidad(String, Integer)}
+      class View {
+      +muestraVelocidad(String, Integer)
+      +mostrarCoche(String, String, Integer)
+      }
       class Model {
           ArrayList~Coche~: parking
           +crearCoche(String, String, String)
           +getCoche(String)
           +cambiarVelocidad(String, Integer)
           +getVelocidad(String)
+          +subirVelocidad(String, Integer)
+          +bajarVelocidad(String, Integer)
       }
       
       class IU { mostrarVentana()}
@@ -88,3 +97,6 @@ sequenceDiagram
     deactivate Controller
     View-->>-Dialog: mostrarVelocidad()
 ```
+
+Para cerrar unha breve explicacion, no controller crei o metodo BuscarCoche, e na View o metodo mostrar  coche, tal e como din 
+o nombre do metodo fan o que din.
