@@ -43,11 +43,11 @@ public class Model {
         return aux;
     }
 
+
     /**
-     *
+     * Ddevuelve la velocidad segun la matricula
      * @param matricula
-     * @param v nueva velocidad
-     * @return velocidad modificada
+     * @return
      */
 
     public Integer getVelocidad(String matricula) {
@@ -55,6 +55,12 @@ public class Model {
     }
 
     //Empezo ca tarea
+    /**
+     *
+     * @param matricula
+     * @param v nueva velocidad
+     * @return velocidad modificada
+     */
 
     public Integer subirVelocidad(String matricula, Integer v) {
         // busca el coche
@@ -75,11 +81,7 @@ public class Model {
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
-    /**
-     * Ddevuelve la velocidad segun la matricula
-     * @param matricula
-     * @return
-     */
+
 
 
 }
