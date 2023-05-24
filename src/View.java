@@ -4,12 +4,7 @@ public class View {
     }
    //
     public void muestraDatosCoche(Coche coche) {
-        System.out.println("Datos del coche:");
-        System.out.println("Matrícula: " + coche.matricula);
-        System.out.println("Modelo: " + coche.modelo);
-        System.out.println("Velocidad: " + coche.velocidad + " km/h");
+        Dialog.vDialog("Coche:  " + coche.modelo + " con la matricula: " + coche.matricula + " tiene una velocidad de: " + coche.velocidad);
     }
-// mostrariamos el mensaje
-    public void mostrarMensaje(String s) {
-    }
+
 }
