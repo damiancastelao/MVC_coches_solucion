@@ -9,9 +9,8 @@ public class GUI {
     private JTextField tMatricula;
     private JLabel eModelo;
     private JLabel eMatricula;
-    private JButton jButton1;
-
-    private JButton jButton2;
+    private JButton button1;
+    private JButton button2;
 
     public GUI() {
         bCrear.addActionListener(new ActionListener() {
@@ -20,13 +19,13 @@ public class GUI {
                 Controller.crearCoche(tModelo.getText(),tMatricula.getText());
             }
         });
-        jButton1.addActionListener(new ActionListener() {
+        button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Controller.bajarVelocidad(tMatricula.getText());
             }
         });
-        jButton2.addActionListener(new ActionListener() {
+        button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Controller.aumentarVelocidad(tMatricula.getText());

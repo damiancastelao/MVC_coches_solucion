@@ -5,7 +5,6 @@ public class Dialog extends JDialog{
     private JLabel eVelocidad;
 
     public Dialog(){
-
         setContentPane(panel1);
         setModal(true);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
