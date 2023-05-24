@@ -33,7 +33,7 @@ public class Controller {
 
         Coche aux = miModelo.getCoche(matricula);
         if (aux != null) {
-            miVista.mostrarCoche(aux.matricula, aux.modelo);
+            miVista.mostrarCoche(aux.matricula, aux.modelo, aux.velocidad);
         } else {
             Dialog.msjDialog("Coche no encontrado.");
         }

@@ -44,6 +44,8 @@ public class IU {
             }
         });
 
+        //Agrego a funcion ao boton de buscar 
+
         btBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
