@@ -23,10 +23,11 @@ public class View {
      * @param matricula del coche
      * @param velocidad del coche
      */
-    public static void mostrarDatos(String modelo, String matricula, Integer velocidad){
+    public static boolean mostrarDatos(String modelo, String matricula, Integer velocidad){
         String mensaje = "Datos del coche:\n Modelo: " + modelo + "\n" +
                 "Matricula: " + matricula + "\n" + "Velocidad: " + velocidad + "km/hr";
         System.out.println(mensaje);
         Dialogo.main(mensaje);
+        return true;
     }
 }

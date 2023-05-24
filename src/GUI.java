@@ -38,8 +38,7 @@ public class GUI {
         buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String matricula = JOptionPane.showInputDialog(null, "Ingresa la matricula: ", "Buscar coche", JOptionPane.QUESTION_MESSAGE);
-                if(matricula != null && !matricula.isEmpty()) Controller.buscarButton(matricula);
+                Controller.buscarButton(textField2.getText());
             }
         });
     }
