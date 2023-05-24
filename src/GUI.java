@@ -11,6 +11,10 @@ public class GUI {
     private JButton subirButton;
     private JButton bajarButton;
 
+    /**
+     * Constructor, establece los ActionListener para los botones
+     * crearButton, subirButton y bajarButton
+     */
     public GUI(){
         crearButton.addActionListener(new ActionListener() {
             @Override
@@ -32,6 +36,10 @@ public class GUI {
         });
     }
 
+    /**
+     * Metodo que instancia el JFrame, establece la operación de cierre del marco
+     * y lo muestra en pantalla
+     */
     public static void createUIComponents() {
         app = new JFrame("App");
         app.setContentPane(new GUI().panel1);
