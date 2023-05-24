@@ -22,4 +22,21 @@ public class Controller {
     }
 
     //empezamos o examen
+
+    /**
+     * Devolve os datos do coche pola matricula
+     * @param matricula
+     * @return
+
+     */
+    public static void buscarCoche(String matricula) {
+
+        Coche aux = miModelo.getCoche(matricula);
+        if (aux != null) {
+            miVista.mostrarCoche(aux.matricula, aux.modelo);
+        } else {
+            Dialog.msjDialog("Coche no encontrado.");
+        }
+    }
+
 }
