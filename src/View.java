@@ -3,8 +3,8 @@ public class View {
         Dialog.msjDialog("El coche " + matricula + " tiene una velocidad de: " + v + "km/h");
     }
 
-    void mostrarCoche(String matricula, String modelo){
-        Dialog.msjDialog("El coche de este modelo:" + modelo+ " e desta matricula "+ matricula );
+    void mostrarCoche(String matricula, String modelo, Integer v){
+        Dialog.msjDialog("El coche de este modelo:" + modelo+ " e desta matricula "+ matricula + "y  tiene una velocidad de: " + v + "km/h");
     }
 }
     
