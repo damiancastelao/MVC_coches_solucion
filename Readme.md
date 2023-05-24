@@ -52,7 +52,7 @@ En el listener del botón llamamos al `controler`
 ```mermaid
 sequenceDiagram
     actor usuario
-   participant View
+    participant View
     participant Controller
     participant Model
     
@@ -67,6 +67,19 @@ sequenceDiagram
     Controller-->>View: Coche creado
     deactivate Controller
     View-->>usuario: Tu coche se ha creado!
+    deactivate View
+    
+    usuario-->>View: clik! Buscar coche
+    activate View
+    View-->>Controller: El usuario quiere buscar un coche
+    activate Controller
+    Controller->>Model: Puedes buscar un coche?
+    activate Model
+    Model-->>Controller: Coche
+    deactivate Model
+    Controller-->>View: Coche buscado
+    deactivate Controller
+    View-->>usuario: Tu coche se ha encontrado!
     deactivate View
     
     usuario-->>View: clik! Para aumentar velocidad
