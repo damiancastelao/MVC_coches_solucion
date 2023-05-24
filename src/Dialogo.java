@@ -5,15 +5,12 @@ public class Dialogo  extends JDialog {
     private static Dialogo instance;
     private  JTextField textAreatexto;
 
-
     private Dialogo() {
 
         setContentPane(panelDialogo);
         setModal(true);
 
-
     }
-
     /**
      * Metodo instance singleton garantiza que tan solo exista
      * un objeto de su tipo y proporciona un único punto de acceso a él para cualquier otro código.
@@ -39,11 +36,5 @@ public class Dialogo  extends JDialog {
             dialog.setBounds(500, 200, 800, 350);
             dialog.setVisible(true);
 
-
-
-
-
         }
-
-
 }

@@ -14,7 +14,6 @@ public class Controller {
 
     }
 
-
     /**
      * @param modelo
      * @param matricula
@@ -24,12 +23,12 @@ public class Controller {
      * @param velocidad;
      */
 
-    public void  crearCoche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas, int velocidad) {
+    public void crearCoche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas, int velocidad) {
         Coche coche = miModelo.crearCoche(modelo, matricula, aireAcondicionado, tapizadoDeCuero, numeroDePuertas, velocidad);
         if (coche != null)
             miVista.mostrarCoche(coche.modelo, coche.matricula, coche.aireAcondicionado, coche.tapizadoDeCuero, coche.numeroDePuertas, coche.velocidad);
 
-         }
+    }
 
     /**
      * Metodo aumentarVelocidad
@@ -52,7 +51,15 @@ public class Controller {
     public int disminuirVelocidad(String matricula, int velocidad) {
         return miModelo.bajarVelocidad(matricula, velocidad);
     }
-    public Coche  buscar(String matricula) {
+
+    /**
+     * Busca un objeto Coche en base a una matrícula específica.
+     *
+     * @param matricula La matrícula del coche que se desea buscar.
+     * @return El objeto Coche correspondiente a la matrícula especificada, o null si no se encuentra.
+     */
+    public Coche buscar(String matricula) {
         return miModelo.getCoche(matricula);
     }
+
 }

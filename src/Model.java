@@ -6,8 +6,9 @@ public class Model {
 
     /**
      * Crea un coche cn builder que permite construir objetos complejos paso a paso.
-     *añadimos el coche en el parking
-     * @return  coche
+     * añadimos el coche en el parking
+     *
+     * @return coche
      */
     public Coche crearCoche(String modelo, String matricula, boolean aireAcondicionado, boolean tapizadoDeCuero, int numeroDePuertas, int velocidad) {
 
@@ -25,6 +26,7 @@ public class Model {
 
     /**
      * Busca coche segun matricula
+     *
      * @param matricula a buscar
      * @return chche o null si no existe
      */
@@ -33,7 +35,7 @@ public class Model {
         // recorre el array buscando por matricula
         for (Coche coche : parking) {
             if (coche.matricula.equalsIgnoreCase(matricula)) {
-                 return coche;
+                return coche;
             }
         }
         return null;
@@ -55,6 +57,7 @@ public class Model {
 
     /**
      * Ddevuelve la velocidad segun la matricula
+     *
      * @param matricula coche
      */
     public Integer getVelocidad(String matricula) {
@@ -66,26 +69,27 @@ public class Model {
      * @param velocidadAumentar nueva velocidad
      * @return velocidad modificada
      */
-    public  Integer subirVelocidad(String matricula, int velocidadAumentar) {
+    public Integer subirVelocidad(String matricula, int velocidadAumentar) {
 
         // busca el coche
         Coche coche = getCoche(matricula);
         coche.velocidad += velocidadAumentar;
 
         // retorna la nueva velocidad
-        return  coche.velocidad;
+        return coche.velocidad;
     }
+
     /**
      * @param velocidadDisminuir nueva velocidad
      * @return velocidad modificada
      */
-    public  Integer bajarVelocidad(String matricula, int velocidadDisminuir) {
+    public Integer bajarVelocidad(String matricula, int velocidadDisminuir) {
         // busca el coche
         Coche coche = getCoche(matricula);
         coche.velocidad -= velocidadDisminuir;
 
         // retorna la nueva velocidad
-        return  coche.velocidad;
+        return coche.velocidad;
     }
 }
 

@@ -23,10 +23,19 @@ public class Iu {
     private JButton Buttonsalir;
     private JButton BuscarButton;
 
+    /**
+     * Constructor de la clase Iu.
+     * Se encarga de inicializar la interfaz de usuario y configurar los ActionListener para los botones.
+     */
     public Iu() {
 
         controller = new Controller();
         buttonCrearCoche.addActionListener(new ActionListener() {
+            /**
+             * Método que se ejecuta cuando se produce un evento de acción en el botón buttonCrearCoche.
+             *
+             * @param e El evento de acción.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 String matricula = textFielMatricula.getText();
@@ -41,28 +50,62 @@ public class Iu {
 
             }
         });
+
+        /**
+         *  ActionListener para el botón buttonAumentar
+         */
         buttonAumentar.addActionListener(new ActionListener() {
+            /**
+             * Método que se ejecuta cuando se produce un evento de acción en el botón buttonAumentar.
+             *
+             * @param e El evento de acción.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 int nuevaVelocidad = controller.aumentarVelocidad(textFielMatricula.getText(),10 );
                 textFieldVelocidad.setText(String.valueOf(nuevaVelocidad));
             }
         });
+
+        /**
+         * ActionListener para el botón buttonDisminuir.
+         */
         buttonDisminuir.addActionListener(new ActionListener() {
+            /**
+             * Método que se ejecuta cuando se produce un evento de acción en el botón buttonDisminuir.
+             *
+             * @param e El evento de acción.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 int nuevaVelocidad = controller.disminuirVelocidad(textFielMatricula.getText(),10 );
                 textFieldVelocidad.setText(String.valueOf(nuevaVelocidad));
             }
         });
+
+        /**
+         * ActionListener para el botón Buttonsalir.
+         */
         Buttonsalir.addActionListener(new ActionListener() {
+            /**
+             * Método que se ejecuta cuando se produce un evento de acción en el botón Buttonsalir.
+             *
+             * @param e El evento de acción.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }
         });
-        
+        /**
+         * ActionListener para el botón BuscarButton.
+         */
             BuscarButton.addActionListener(new ActionListener() {
+                /**
+                 * Método que se ejecuta cuando se produce un evento de acción en el botón BuscarButton.
+                 *
+                 * @param e El evento de acción.
+                 */
                 @Override
                 public void actionPerformed(ActionEvent e) {
 
@@ -92,6 +135,9 @@ public class Iu {
         jframe.setVisible(true);
         jframe.setBounds(500, 200, 500, 350);
     }
+
+
+
 }
 
 
