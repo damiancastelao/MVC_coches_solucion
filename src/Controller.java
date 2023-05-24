@@ -13,7 +13,9 @@ public class Controller {
      * @param matricula del coche
      */
     public static void crearButton(String modelo, String matricula) {
+        // Creamos un objeto 'aux' de la clase coche con el método que está en la clase Model
         Coche aux = Model.crearCoche(modelo, matricula);
+        // Mostramos la velocidad haciendo uso de la clase View
         if (aux != null) View.muestraVelocidad(aux.matricula, aux.velocidad);
     }
 
@@ -39,6 +41,15 @@ public class Controller {
         Integer aux = Model.bajarVelocidad(matricula, v);
         if (aux != null) View.muestraVelocidad(matricula, aux);
         return aux;
+    }
+
+    /**
+     * Metodo que busca un coche por la matricula
+     * @param matricula del coche
+     */
+    public static void buscarCoche(String matricula){
+        Coche aux = Model.getCoche(matricula);
+        if (aux != null) View.mostrarDatos(aux.modelo, aux.matricula, aux.velocidad);
     }
 
 
