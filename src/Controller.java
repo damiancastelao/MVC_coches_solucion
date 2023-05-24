@@ -1,7 +1,14 @@
 public class Controller {
+
+    static Model miModelo;
+    static View miVista;
     public static void main(String[] args) {
         Model miModelo = new Model();
         View miVista = new View();
+        //inicializamos
+        miModelo = new Model();
+        miVista = new View();
+
 
         // Crear tres coches
 
@@ -19,5 +26,8 @@ public class Controller {
         boolean hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
 
         System.out.println(hecho);
+    }
+    public void crearCoche(String modelo, String matricula){
+
     }
 }
