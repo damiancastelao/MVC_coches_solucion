@@ -11,24 +11,24 @@ public class Controller {
         nuevModelo.crearCoche("Alpine", "HYU 4567");
         nuevModelo.crearCoche("Aston Martin", "FGH 3333");
 
-        Coche ferrari = miModelo.getCoche("SBC 1234");
+        Coche ferrari = nuevModelo.getCoche("SBC 1234");
 
         // modifica la velocidad
-        miModelo.cambiarVelocidad("SBC 1234", 20);
+        nuevModelo.cambiarVelocidad("SBC 1234", 20);
         // recoje la velocidad y la muestra (tarea de la View)
-        boolean hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
+        boolean hecho = nuevVista.muestraVelocidad("SBC 1234", nuevModelo.getVelocidad("SBC 1234"));
         System.out.println(hecho);
 
         // sube la velocidad
-        miModelo.subirVelocidad("SBC 1234", 200);
+        nuevModelo.subirVelocidad("SBC 1234", 200);
         // recoje la velocidad y la muestra (tarea de la View)
-        hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
+        hecho = nuevVista.muestraVelocidad("SBC 1234", nuevModelo.getVelocidad("SBC 1234"));
         System.out.println(hecho);
 
         // baja la velocidad
-        miModelo.bajarVelocidad("SBC 1234", 80);
+        nuevModelo.bajarVelocidad("SBC 1234", 80);
         // recoje la velocidad y la muestr (tarea de la View)
-        hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
+        hecho = nuevVista.muestraVelocidad("SBC 1234", nuevModelo.getVelocidad("SBC 1234"));
         System.out.println(hecho);
     }
 }
