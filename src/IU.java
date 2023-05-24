@@ -9,6 +9,7 @@ public class IU {
     private JTextField matricula;
     private JButton button1;
     private JButton button2;
+    private JButton btn_getCoche;
 
     //como necesitamos un controlador lo instanciaremos fuera
     Controller controlador;
@@ -33,6 +34,12 @@ public class IU {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Controller.aumentarVelocidad(matricula.getText());
+            }
+        });
+        btn_getCoche.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Controller.getCoche(matricula.getText());
             }
         });
     }

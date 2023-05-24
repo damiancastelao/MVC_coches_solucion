@@ -12,6 +12,18 @@ Implementa la funcionalidad de buscar un coche dado de alta y mostrar sus datos,
     -Mientras codificas, documenta
 
 
+#### Pasos
+
+    1- He creado un Issue en Github donde propongo el cambio del nuevo método getCoche()
+
+    2- Implemento esta motificación añadiendo un nuevo boton llamado getCoche() y llamando desde el Listener
+            al método getCoche del controller
+        Este mismo método en el controller, llama al método getCoche del Model y al método mosrar coche de vista
+
+    3- Desde esta rama creo un pull request a la rama principal
+
+    4- realizo un javaDoc de estas modificaciones
+
 ---
 ## Diagrama de clases:
 
@@ -44,46 +56,8 @@ classDiagram
 
 ## Diagrama de Secuencia
 
-Ejemplo básico del procedimiento, sin utilizar los nombres de los métodos
+Aquí se muestra el diagrama de secuencia en el cual añadimos el método de getCoche()
 
-
-```mermaid
-sequenceDiagram
-    participant Model
-    participant Controller
-    participant View
-    Controller->>Model: Puedes crear un coche?
-    activate Model
-    Model-->>Controller: Creado!
-    deactivate Model
-    Controller->>+View: Muestra la velocidad, porfa
-    activate View
-    View->>-View: Mostrando velocidad
-    View-->>Controller: Listo!
-    deactivate View
-```
-
-El mismo diagrama con los nombres de los métodos
-
-```mermaid
-sequenceDiagram
-    participant Model
-    participant Controller
-    participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
-    activate Model
-    Model-->>Controller: Coche
-    deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
-    activate View
-    View->>-View: System.out.println()
-    View-->>Controller: boolean
-    deactivate View
-```
-
-
-
-## BAJAR Y SUBIR VELOCIDAD
 ```mermaid
 sequenceDiagram
     participant Model
@@ -116,4 +90,14 @@ sequenceDiagram
     View->>-View: System.out.println(velocidad)
     View-->>Controller: boolean
     deactivate View
+    Controller->>Model: getCoche("BXK 1234")
+    activate Model
+    Model-->>Controller: Coche obtenido
+    deactivate Model
+    Controller->>+View: muestraCoche(coche)
+    activate View
+    View->>-View: System.out.println(coche)
+    View-->>Controller: boolean
+    deactivate View
+
 ```

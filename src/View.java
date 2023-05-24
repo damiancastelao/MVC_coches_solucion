@@ -16,4 +16,11 @@ public class View {
         return true;
     }
 
+
+    boolean muestraCoche(String matricula,Integer v){
+        String mensaje = "Coche "+ matricula + ": " + v + "km/hr";
+        Dialog.mostrarMensaje(mensaje);
+        return true;
+    }
+
 }
