@@ -16,9 +16,21 @@ public class Model {
     }
 
     /**
+     * @param matricula
+     * @param v nueva velocidad
+     * @return velocidad modificada
+     */
+    public Integer cambiarVelocidad(String matricula, Integer v) {
+        // busca el coche
+        getCoche(matricula).velocidad = v;
+        // retorna la nueva velocidad
+        return getCoche(matricula).velocidad;
+    }
+
+    /**
      * Busca coche segun matricula
      * @param matricula a buscar
-     * @return chche o null si no existe
+     * @return coche o null si no existe
      */
     public Coche getCoche(String matricula){
         Coche aux = null;
@@ -32,41 +44,25 @@ public class Model {
     }
 
     /**
-     *
      * @param matricula
-     * @param v nueva velocidad
-     * @return velocidad modificada
-     */
-    public Integer cambiarVelocidad(String matricula, Integer v) {
-        // busca el coche
-        getCoche(matricula).velocidad = v;
-        // retorna la nueva velocidad
-        return getCoche(matricula).velocidad;
-    }
-
-    /**
-     *
-     * @param matricula
-     * @param v velocidad a aumentar
+     * @param v -> velocidad a subir
      * @return velocidad modificada
      */
     public Integer subirVelocidad(String matricula, Integer v) {
-        // busca el coche
-        getCoche(matricula).velocidad += v;
+        // busca el coche y sube la velocidad
+        getCoche(matricula).velocidad = getCoche(matricula).velocidad + v;
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
 
     /**
-     *
      * @param matricula
-     * @param v velocidad a reducir
+     * @param v -> velocidad a bajar
      * @return velocidad modificada
      */
     public Integer bajarVelocidad(String matricula, Integer v) {
-        // busca el coche
-        getCoche(matricula).velocidad = Math.max((getCoche(matricula).velocidad - v), 0);
-
+        // busca el coche y sube la velocidad
+        getCoche(matricula).velocidad = getCoche(matricula).velocidad - v;
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
