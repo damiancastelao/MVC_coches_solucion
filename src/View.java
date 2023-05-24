@@ -1,9 +1,7 @@
 public class View {
-    boolean muestraVelocidad(String matricula, Integer v){
-        System.out.println(matricula + ": " + v + "km/hr");
-        return true;
-
-
+    void muestraVelocidad(String matricula, Integer v){
+        Dialog.msjDialog("El coche " + matricula + " tiene una velocidad de: " + v + "km/h");
     }
-    
 }
+    
+
