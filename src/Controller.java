@@ -12,6 +12,15 @@ public class Controller {
             miVista.muestraVelocidad(aux.matricula, aux.velocidad);
         }
     }
+// implementamos el nuevo método buscar coche
+    public static void buscarCoche(String criterio) {
+        Coche cocheEncontrado = miModelo.buscarCoche(criterio);
+        if (cocheEncontrado != null) {
+            miVista.muestraDatosCoche(cocheEncontrado);
+        } else {
+            miVista.mostrarMensaje("No se encontró ningún coche con el criterio de búsqueda.");
+        }
+    }
 
     public static void bajarVelocidad(String matricula){
         int aux = miModelo.bajarVelocidad(matricula);
