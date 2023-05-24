@@ -108,3 +108,11 @@ sequenceDiagram
     View-->>Controller: boolean
     deactivate View
 ```
+
+# Nueva función
+
+---
+
+####  Función añadida al programa de coches
+
+Ahora se pueden buscar coches creados por su matricula usando el nuevo boton implementado en la UI
