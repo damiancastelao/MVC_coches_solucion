@@ -13,6 +13,12 @@ public class Controller {
         // modifica la velocidad
         Model.cambiarVelocidad("SBC 1234", 30);
 
+        // subir la velocidad
+        miModelo.subirVelocidad("SBC 1234", 100);
+
+        // bajar la velocidad
+        miModelo.bajarVelocidad("SBC 1234", 50);
+
         // recoje la velocidad y la muestra (tarea de la View)
         boolean hecho = View.muestraVelocidad("SBC 1234", Model.getVelocidad("SBC 1234"));
 

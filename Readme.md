@@ -22,6 +22,8 @@ classDiagram
           +getCoche(String)
           +cambiarVelocidad(String, Integer)
           +getVelocidad(String)
+          +subirVelocidad(String, Integer)
+          +bajarVelocidad(String, Integer)
       }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
