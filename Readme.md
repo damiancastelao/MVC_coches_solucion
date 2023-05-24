@@ -88,3 +88,40 @@ sequenceDiagram
     View-->>Controller: boolean
     deactivate View
 ```
+
+
+
+## BAJAR Y SUBIR VELOCIDAD
+```mermaid
+sequenceDiagram
+    participant Model
+    participant Controller
+    participant View
+    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    activate Model
+    Model-->>Controller: Coche creado
+    deactivate Model
+    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    activate View
+    View->>-View: System.out.println(velocidad)
+    View-->>Controller: boolean
+    deactivate View
+    Controller->>Model: bajarVelocidad("BXK 1234")
+    activate Model
+    Model-->>Controller: Velocidad bajada
+    deactivate Model
+    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    activate View
+    View->>-View: System.out.println(velocidad)
+    View-->>Controller: boolean
+    deactivate View
+    Controller->>Model: subirVelocidad("BXK 1234")
+    activate Model
+    Model-->>Controller: Velocidad subida
+    deactivate Model
+    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    activate View
+    View->>-View: System.out.println(velocidad)
+    View-->>Controller: boolean
+    deactivate View
+```
