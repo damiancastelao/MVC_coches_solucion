@@ -20,4 +20,6 @@ public class Controller {
         int aux = miModelo.subirVelocidad(matricula);
         miVista.muestraVelocidad(matricula,aux);
     }
+
+    //empezamos o examen
 }
