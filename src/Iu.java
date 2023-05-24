@@ -97,6 +97,7 @@ public class Iu {
                 System.exit(0);
             }
         });
+
         /**
          * ActionListener para el botón BuscarButton.
          */
@@ -109,7 +110,7 @@ public class Iu {
                 @Override
                 public void actionPerformed(ActionEvent e) {
 
-                    Coche cocheEncontrado = controller.buscar(textFielMatricula.getText());
+                    Coche cocheEncontrado = controller.buscarCoche(textFielMatricula.getText());
                     if (cocheEncontrado != null) {
                         textFieldModelo.setText(cocheEncontrado.getModelo());
                         checkBoxAire.setSelected(cocheEncontrado.isAireAcondicionado());

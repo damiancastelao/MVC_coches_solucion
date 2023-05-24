@@ -55,10 +55,11 @@ public class Controller {
     /**
      * Busca un objeto Coche en base a una matrícula específica.
      *
-     * @param matricula La matrícula del coche que se desea buscar.
+     * @param matricula La matrícula del coche que se desea buscarCoche.
      * @return El objeto Coche correspondiente a la matrícula especificada, o null si no se encuentra.
      */
-    public Coche buscar(String matricula) {
+    public Coche buscarCoche(String matricula) {
+
         return miModelo.getCoche(matricula);
     }
 

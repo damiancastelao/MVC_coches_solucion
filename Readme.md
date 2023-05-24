@@ -1,6 +1,7 @@
 # Arquitectura MVC
 
-Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
+Aplicación que trabaja con objetos coches, modifica la velocidad, busca el coche mediante la matricula
+y la muestra
 
 ---
 
@@ -10,25 +11,32 @@ Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
 ```mermaid
 classDiagram
     class Coche {
-        String: matricula
-        String: modelo
-        Integer: velocidad
+       
+     String matricula;
+    String modelo;
+    int velocidad;
+    boolean aireAcondicionado;
+    int numeroDePuertas;
+    boolean tapizadoDeCuero;
     }
       class Controller{
-          +main()
+       crearCoche(String,String,boolea,boolean,int,int ) 
+       aumentarVelocidad(String,int ) 
+       disminuirVelocidad(String,int )
+        Coche buscarCoche(String ) 
       }
-      class View {+muestraVelocidad(String, Integer)}
+      class View {+mostrarCoche(String,String,boolean,boolean,int ,int)}
       class Model {
           ArrayList~Coche~: parking
-          +crearCoche(String, String, String)
+          +crearCoche(String, String,String)
           +getCoche(String)
-          +cambiarVelocidad(String, Integer)
+          +cambiarVelocidad(String,int)
           +getVelocidad(String)
       }
       
-      class IU { mostrarVentana()}
+      class IU { crearVentana()}
       
-      class Dialog { mostrarVelocidad() }
+     class Dialog { mostrarMensaje() }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association
