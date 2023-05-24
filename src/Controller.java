@@ -8,7 +8,16 @@ public class Controller {
         myModel.crearCoche("Alpine", "HYU 4567");
         myModel.crearCoche("Aston Martin", "FGH 3333");
 
+        // Buscar un coche y mostrar sus datos, incluyendo la velocidad
         Coche ferrari = myModel.getCoche("SBC 1234");
+        if (ferrari != null) {
+            System.out.println("Datos del coche encontrado:");
+            System.out.println("Matrícula: " + ferrari.getMatricula());
+            System.out.println("Modelo: " + ferrari.getModelo());
+            System.out.println("Velocidad: " + ferrari.getVelocidad() + " km/hr");
+        } else {
+            System.out.println("No se encontró un coche con la matrícula especificada.");
+        }
 
         // Modificar la velocidad
         myModel.cambiarVelocidad("SBC 1234", 30);
