@@ -15,6 +15,8 @@ public class IU {
     private JButton btCrear;
     private JButton btBajar;
     private JButton btAumentar;
+
+    //agrego boton buscar
     private JButton btBuscar;
 
     /**
