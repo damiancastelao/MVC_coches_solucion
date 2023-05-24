@@ -10,6 +10,7 @@ public class GUI {
     private JButton crearButton;
     private JButton subirButton;
     private JButton bajarButton;
+    private JButton buscarButton;
 
     /**
      * Constructor, establece los ActionListener para los botones
@@ -32,6 +33,13 @@ public class GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Controller.bajarButton(textField2.getText(), 10);
+            }
+        });
+        buscarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String matricula = JOptionPane.showInputDialog(null, "Ingresa la matricula: ", "Buscar coche", JOptionPane.QUESTION_MESSAGE);
+                if(matricula != null && !matricula.isEmpty()) Controller.buscarButton(matricula);
             }
         });
     }

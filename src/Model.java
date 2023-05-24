@@ -10,7 +10,9 @@ public class Model {
      * @return el coche creado
      */
     public static Coche crearCoche(String modelo, String matricula){
+        // Creamos un objeto 'aux' de la clase coche
         Coche aux = new Coche(modelo, matricula);
+        // Lo añadimos al ArrayList 'parking'
         parking.add(aux);
         return aux;
     }
@@ -32,7 +34,7 @@ public class Model {
     }
 
     /**
-     *
+     * Metodo que cambia la velocidad que queremos
      * @param matricula
      * @param v nueva velocidad
      * @return velocidad modificada
@@ -51,6 +53,7 @@ public class Model {
      * @return velocidad actualizada
      */
     public static Integer subirVelocidad(String matricula, Integer v){
+        // Tomamos la velocidad del coche que indiquemos y le subimos la velocidad que pasamos por parametro
         getCoche(matricula).velocidad = v + getCoche(matricula).velocidad;
         return getCoche(matricula).velocidad;
     }
@@ -62,6 +65,7 @@ public class Model {
      * @return velocidad actualizada
      */
     public static Integer bajarVelocidad(String matricula, Integer v){
+        // Tomamos la velocidad del coche que indiquemos y le bajamos la velocidad que pasamos por parametro
         getCoche(matricula).velocidad = getCoche(matricula).velocidad - v;
         return getCoche(matricula).velocidad;
     }

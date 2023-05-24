@@ -44,10 +44,10 @@ public class Controller {
     }
 
     /**
-     * Metodo que busca un coche por la matricula
+     * Metodo que muestra los datos del coche que buscamos por matricula
      * @param matricula del coche
      */
-    public static void buscarCoche(String matricula){
+    public static void buscarButton(String matricula){
         Coche aux = Model.getCoche(matricula);
         if (aux != null) View.mostrarDatos(aux.modelo, aux.matricula, aux.velocidad);
     }
