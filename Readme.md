@@ -1,7 +1,14 @@
 # Arquitectura MVC
 
-Aplicación que crea y modifica la velocidad de un coche, este tambien muestra el coche creado anteriormente y su velocidad.
+En esta rama utilizaremos el patrón Observer
 
+Los cambios de la velocidad que se hagan en el model serán observados por el Controller
+
+Para notificar a los observadores hacemos dos pasos
+
+Actualizamos el estado a 'algo a cambiado' con setChanged()
+Notificamos a los observadores notifyObservers(valor)
+De esta manera se dispara en todos los observadores el método update()
 ---
 ## Diagrama de clases:
 

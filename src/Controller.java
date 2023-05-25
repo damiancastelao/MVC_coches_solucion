@@ -1,43 +1,34 @@
 public class Controller {
-    static Model nuevModelo = new Model();
-    static View nuevVista = new View();
+    static Model miModelo = new Model();
+    static View miVista = new View();
     public static void main(String[] args) {
+        OVelocidad oVelocidad = new OVelocidad();
+        miModelo.addObserver(oVelocidad);
         GUI.crearVentana();
     }
 
-    /***
-     * Crea un coche mediante las variables nomdelo y matricula
+    /**
+     * @param modelo
      * @param matricula
      */
     public static void crearCoche(String modelo, String matricula){
-        Coche aux = nuevModelo.crearCoche(modelo,matricula);
+        Coche aux = miModelo.crearCoche(modelo,matricula);
         if(aux!=null){
-            nuevVista.muestraVelocidad(aux.matricula, aux.velocidad);
+            miVista.muestraVelocidad(aux.matricula, aux.velocidad);
         }
     }
-    /***
-     * Baja la velocidad un coche ya creado anteriormente
+
+    /**
      * @param matricula
      */
     public static void bajarVelocidad(String matricula){
-        int aux = nuevModelo.bajarVelocidad(matricula);
-        nuevVista.muestraVelocidad(matricula, aux);
+        miModelo.bajarVelocidad(matricula);
     }
-    /***
-     * Sube la velocidad un coche ya creado anteriormente
+
+    /**
      * @param matricula
      */
     public static void aumentarVelocidad(String matricula){
-        int aux = nuevModelo.subirVelocidad(matricula);
-        nuevVista.muestraVelocidad(matricula,aux);
-    }
-
-    /***
-     * Busca un coche ya creado anteriormente
-     * @param matricula
-     */
-    public static void buscarCoche(String matricula){
-        Coche cocheobj = nuevModelo.getCoche(matricula);
-        nuevVista.muestraCoche(cocheobj, matricula);
+        miModelo.subirVelocidad(matricula);
     }
 }
