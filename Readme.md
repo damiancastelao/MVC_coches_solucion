@@ -48,8 +48,8 @@ git push origin ex3observer
 
 5. Crear un pull request para fusionar los cambios en la rama principal:
 - Descripción del pull request: Este pull request propone la incorporación de la funcionalidad de aviso de exceso de velocidad utilizando el patrón Observer. Los detalles de los cambios realizados se encuentran en el issue asociado.
-------------------------------------------------------------------------------------------------------------------------------------------------
 
+------------------------------------------------------------------------------------------------------------------------------------------------
 ## Diagrama de clases:
 
 ```mermaid
