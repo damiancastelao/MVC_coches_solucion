@@ -37,7 +37,7 @@ git checkout -b ex3observer
 
 3. Subir los cambios a GitHub con los siguientes comandos:
 git add .
-git commit -m "Agregar funcionalidad de aviso de exceso de velocidad"
+git commit -m "Agrego el código para la función de exceso de velocidad"
 git push origin ex3observer
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
