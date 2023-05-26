@@ -58,9 +58,13 @@ classDiagram
         String: matricula
         String: modelo
         Integer: velocidad
+        List<Observer>: observers
         +subirVelocidad(Integer)
         +bajarVelocidad(Integer)
         +getVelocidad() : Integer
+        +addObserver(Observer)
+        +removeObserver(Observer)
+        +notifyObservers()
     }
     class Controller {
         +main()
@@ -75,9 +79,14 @@ classDiagram
         +subirVelocidad(String, Integer)
         +bajarVelocidad(String, Integer)
     }
+    class ObsExceso {
+        +update(Coche)
+    }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association
+    Coche "1" o-- "0..n" Observer : observers
+    ObsExceso --|> Observer : implements
 
 ```
 
@@ -93,6 +102,8 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
+    participant Coche
+    participant ObsExceso
     Controller->>Model: crearCoche("Mercedes", "BXK 1234")
     activate Model
     Model-->>Controller: Coche
@@ -107,6 +118,10 @@ sequenceDiagram
     activate Model
     Model->>Coche: subirVelocidad(30)
     activate Coche
+    Coche->>+ObsExceso: notifyObservers()
+    activate ObsExceso
+    ObsExceso-->>Coche: (ninguna)
+    deactivate ObsExceso
     Coche-->>Model: (ninguna)
     deactivate Coche
     Model-->>Controller: (ninguna)
@@ -121,6 +136,8 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
+    participant Coche
+    participant ObsExceso
     Controller->>Model: crearCoche("Mercedes", "BXK 1234")
     activate Model
     Model-->>Controller: Coche
@@ -135,10 +152,13 @@ sequenceDiagram
     activate Model
     Model->>Coche: subirVelocidad(30)
     activate Coche
+    Coche->>+ObsExceso: notifyObservers()
+    activate ObsExceso
+    ObsExceso-->>Coche: (ninguna)
+    deactivate ObsExceso
     Coche-->>Model: (ninguna)
     deactivate Coche
     Model-->>Controller: (ninguna)
     deactivate Model
-
 
 ```
