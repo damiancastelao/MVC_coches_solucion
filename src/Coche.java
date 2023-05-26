@@ -1,4 +1,6 @@
-public class Coche {
+import java.util.Observable;
+
+public class Coche extends Observable {
     private String matricula;
     private String modelo;
     private Integer velocidad;
@@ -23,5 +25,7 @@ public class Coche {
 
     public void setVelocidad(Integer velocidad) {
         this.velocidad = velocidad;
+        setChanged();
+        notifyObservers();
     }
 }

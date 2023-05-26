@@ -4,17 +4,25 @@ public class Controller {
         View myView = new View();
 
         // Crear tres coches
-        myModel.crearCoche("LaFerrari", "SBC 1234");
-        myModel.crearCoche("Alpine", "HYU 4567");
-        myModel.crearCoche("Aston Martin", "FGH 3333");
+        Coche ferrari = myModel.crearCoche("LaFerrari", "SBC 1234");
+        Coche alpine = myModel.crearCoche("Alpine", "HYU 4567");
+        Coche astonMartin = myModel.crearCoche("Aston Martin", "FGH 3333");
+
+        // Crear un observer para el exceso de velocidad
+        ObsExceso obsExceso = new ObsExceso();
+
+        // Registrar el observer en los coches
+        ferrari.addObserver(obsExceso);
+        alpine.addObserver(obsExceso);
+        astonMartin.addObserver(obsExceso);
 
         // Buscar un coche y mostrar sus datos, incluyendo la velocidad
-        Coche ferrari = myModel.getCoche("SBC 1234");
-        if (ferrari != null) {
+        Coche cocheEncontrado = myModel.getCoche("SBC 1234");
+        if (cocheEncontrado != null) {
             System.out.println("Datos del coche encontrado:");
-            System.out.println("Matrícula: " + ferrari.getMatricula());
-            System.out.println("Modelo: " + ferrari.getModelo());
-            System.out.println("Velocidad: " + ferrari.getVelocidad() + " km/hr");
+            System.out.println("Matrícula: " + cocheEncontrado.getMatricula());
+            System.out.println("Modelo: " + cocheEncontrado.getModelo());
+            System.out.println("Velocidad: " + cocheEncontrado.getVelocidad() + " km/hr");
         } else {
             System.out.println("No se encontró un coche con la matrícula especificada.");
         }
@@ -39,5 +47,8 @@ public class Controller {
         // Recoger velocidad y mostrarla (view)
         hecho = myView.muestraVelocidad("SBC 1234", myModel.getVelocidad("SBC 1234"));
         System.out.println(hecho);
+
+        // Crear la ventana
+        IU.crearVentana(myModel, myView);
     }
 }
