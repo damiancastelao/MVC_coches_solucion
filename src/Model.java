@@ -25,10 +25,6 @@ public class Model extends Observable {
     public Integer cambiarVelocidad(String matricula, Integer v) {
         // busca el coche
         getCoche(matricula).velocidad = v;
-        //que cambie
-        setChanged();
-        //notifica o cambio realizado
-        notifyObservers(getCoche(matricula));
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
         /**
@@ -70,10 +66,11 @@ public class Model extends Observable {
     public Integer subirVelocidad(String matricula) {
         // busca el coche
         getCoche(matricula).velocidad = getCoche(matricula).velocidad + 120;
-        //cambio o valor
-        setChanged();
-        //notificoo
-        notifyObservers(getCoche(matricula));
+        //creo un if para cando a velocidade supere os 120 o notifique
+        if (getCoche(matricula).velocidad > 120) {
+            setChanged();
+            notifyObservers(getCoche(matricula));
+        }
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
@@ -87,10 +84,11 @@ public class Model extends Observable {
     public Integer bajarVelocidad(String matricula){
         // busca el coche
         getCoche(matricula).velocidad = getCoche(matricula).velocidad - 120;
-        //cambio o valor
-        setChanged();
-        //notificoo
-        notifyObservers(getCoche(matricula));
+        //igual k en subir velocidad
+        if (getCoche(matricula).velocidad > 120) {
+            setChanged();
+            notifyObservers(getCoche(matricula));
+        };
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
