@@ -1,10 +1,13 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Observer; // Importar Observer de java.util
 
 public class Model {
     static ArrayList<Coche> parking = new ArrayList<>();
 
     public static Coche crearCoche(String modelo, String matricula) {
         Coche aux = new Coche(modelo, matricula);
+        aux.addObserver(new ObsExceso()); // Agregar el observer ObsExceso al nuevo coche
         parking.add(aux);
         return aux;
     }
@@ -14,7 +17,7 @@ public class Model {
         for (Coche e : parking) {
             if (e.matricula.equals(matricula)) {
                 aux = e;
-                break; // Agregamos un break para salir del bucle una vez encontrado el coche
+                break;
             }
         }
         return aux;
@@ -38,5 +41,3 @@ public class Model {
         return parking;
     }
 }
-
-
