@@ -70,7 +70,7 @@ sequenceDiagram
     
      
 ```
-Ahora la parte de la Arquitectura de la vista, son tres clases
+ Arquitectura de la vista.
 
 ```mermaid
 
@@ -100,4 +100,72 @@ Ahora la parte de la Arquitectura de la vista, son tres clases
     
           
 ```
+## Evento en la Vista con el Observer
 
+```mermaid
+sequenceDiagram
+    actor usuario
+    participant View
+    participant Controller
+    participant Model
+    participant ObsExceso
+    
+    usuario->>View: click! Crear coche
+    View->>Controller: el usuario quiere crear un coche
+    activate Controller
+    Controller->>Model: crea un coche, porfa
+    activate Model
+    Model-->>Controller: Coche
+    deactivate Model
+    Controller->>View: ok, coche creado!
+    deactivate Controller
+    View-->>usuario: tu coche se creo!
+    
+    usuario->>View: click! Subir velocidad
+    View->>Controller: el usuario quiere subir la velocidad
+    activate Controller
+    Controller->>Model: sube la velocidad, porfa
+    activate Model
+    Model-->>ObsExceso: Sube la Velocidad
+    activate ObsExceso
+    ObsExceso-->>View: cambio en la velocidad
+    View-->usuario: tu coche ha cambiado la velocidad (si la velocidad supera los 120km/h le sale un aviso)
+```
+
+---
+## Evento con  Observer 
+
+ En este diagrama explico de forma mas especifica.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor usuario        
+    participant Controller
+    participant Model
+    participant ObsExceso
+
+    usuario->>IU: click! Crear coche
+    IU->>Controller: crearCoche()
+    activate Controller
+    Controller->>Model: crearCoche
+    activate Model
+    Model-->>Controller: Coche
+    deactivate Model
+    Controller->>+View: mostrarVelocidad
+    deactivate Controller
+    View-->>-Dialog: mostrarVelocidad()
+    
+    usuario->>IU: click! Subir velocidad
+    IU->>Controller: subirVelocidad()
+    activate Controller
+    Controller->>Model: subirVelocidad()
+    deactivate Controller
+    activate Model
+    Model-->>ObsExceso: Se ha cambiado la Velocidad
+    deactivate Model
+    activate ObsExceso
+    ObsExceso->>+View: mostrarVelocidad() o mostrarExceso()
+    deactivate ObsExceso
+    View-->>-Dialog: mostrarVelocidad()
+```

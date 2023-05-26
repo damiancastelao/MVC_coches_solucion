@@ -19,7 +19,7 @@ public class Iu {
     private JCheckBox checkBoxpuerta;
     private JButton buttonAumentar;
     private JButton buttonDisminuir;
-    private JTextField textFieldVelocidad;
+    public  JTextField textFieldVelocidad;
     private JButton Buttonsalir;
     private JButton BuscarButton;
 
@@ -44,15 +44,15 @@ public class Iu {
         buttonAumentar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int nuevaVelocidad = controller.aumentarVelocidad(textFielMatricula.getText(),10 );
-                textFieldVelocidad.setText(String.valueOf(nuevaVelocidad));
+                String matricula = textFielMatricula.getText();
+                controller.aumentarVelocidad(matricula, 10);
             }
         });
         buttonDisminuir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int nuevaVelocidad = controller.disminuirVelocidad(textFielMatricula.getText(),10 );
-                textFieldVelocidad.setText(String.valueOf(nuevaVelocidad));
+                String matricula = textFielMatricula.getText();
+                controller.disminuirVelocidad(matricula, 10);
             }
         });
         Buttonsalir.addActionListener(new ActionListener() {
@@ -84,13 +84,15 @@ public class Iu {
     /**
      * Metodos en donde creamos la ventana
      */
-    public static void crearVentana(){
+    public static Iu crearVentana(){
         JFrame jframe = new JFrame("App ");
-        jframe.setContentPane(new Iu().panelIu);
+        Iu form = new Iu();
+        jframe.setContentPane(form.panelIu);
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.pack();
         jframe.setVisible(true);
         jframe.setBounds(500, 200, 500, 350);
+        return form;
     }
 }
 
