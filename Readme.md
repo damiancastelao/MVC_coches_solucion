@@ -43,7 +43,7 @@ git push origin ex3observer
 
 4. Crear un issue en GitHub para exponer los cambios:
 - Título del issue: Implementación de aviso de exceso de velocidad utilizando Observer
-- Descripción del issue: Se ha agregado la funcionalidad de aviso de exceso de velocidad utilizando el patrón Observer. Los detalles de los cambios realizados se encuentran en el pull request asociado.
+- Descripción del issue: Se ha agregado la funcionalidad de aviso de exceso de velocidad utilizando el patrón Observer. Detalles en el pull request.
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 5. Crear un pull request para fusionar los cambios en la rama principal:
