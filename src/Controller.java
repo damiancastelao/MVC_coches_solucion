@@ -2,6 +2,9 @@ public class Controller {
     static Model miModelo = new Model();
     static View miVista = new View();
     public static void main(String[] args) {
+        //instacio a clase ObsExceso e mias agrego un observer no miModelo co obxecto obsExceso
+        ObsExceso obsExceso = new ObsExceso();
+        miModelo.addObserver(obsExceso);
         IU.crearVentana();
     }
     public static void crearCoche(String modelo, String matricula){
@@ -12,12 +15,12 @@ public class Controller {
     }
 
     public static void bajarVelocidad(String matricula){
-        int aux = miModelo.bajarVelocidad(matricula);
-        miVista.muestraVelocidad(matricula, aux);
+        miModelo.bajarVelocidad(matricula);
+
     }
 
     public static void aumentarVelocidad(String matricula){
-        int aux = miModelo.subirVelocidad(matricula);
-        miVista.muestraVelocidad(matricula,aux);
+         miModelo.subirVelocidad(matricula);
+
     }
 }
