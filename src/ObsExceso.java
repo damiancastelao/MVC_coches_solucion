@@ -13,9 +13,10 @@ public class ObsExceso implements Observer{
     @Override
     public void update(Observable o, Object arg) {
         Coche coche = (Coche) arg;
-        if (coche.velocidad > 120) {
-            Dialog.msjDialog("Alerta: ¡Velocidad excedida!");
+        if(coche.velocidad>120) {
+            miVista.mostraExceso(coche.matricula, coche.velocidad);
+        }else{
+            miVista.muestraVelocidad(coche.matricula, coche.velocidad);
         }
-        miVista.muestraVelocidad(coche.matricula, coche.velocidad);
     }
 }
