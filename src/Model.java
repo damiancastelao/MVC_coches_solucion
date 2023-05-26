@@ -62,12 +62,14 @@ public class Model extends Observable {
      */
 
     public Integer subirVelocidad(String matricula) {
-        // busca el coche
-        getCoche(matricula).velocidad = getCoche(matricula).velocidad + 40;
-        //cambio
-        setChanged();
-        // notifica o cambio ao observer
-        notifyObservers(getCoche(matricula));
+        Coche coche = getCoche(matricula);
+        if (coche != null) {
+            coche.velocidad += 40; // Aumenta la velocidad en 40
+            setChanged();
+            notifyObservers(coche);
+            return coche.velocidad;
+        }
+        return null; // Retorna null si el coche no existe
     }
 
     /**
@@ -76,12 +78,14 @@ public class Model extends Observable {
      */
 
     public Integer bajarVelocidad(String matricula){
-        // busca el coche
-        getCoche(matricula).velocidad = getCoche(matricula).velocidad - 40;
-        //cambio
-        setChanged();
-        // notifica o cambio aa observer
-        notifyObservers(getCoche(matricula));
+        Coche coche = getCoche(matricula);
+        if (coche != null) {
+            coche.velocidad -= 40; // Disminuye la velocidad en 40
+            setChanged();
+            notifyObservers(coche);
+            return coche.velocidad;
+        }
+        return null; // Retorna null si el coche no existe
     }
 
 
