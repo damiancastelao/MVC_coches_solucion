@@ -17,12 +17,11 @@ También he implementado la capacidad de buscar un coche dado de alta y mostrar 
 Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
-*Examen 3ª V2 cambios utilizando observer*
-Cambios para implementar un aviso de límite de velocidad mediante observer:
+# Examen 3ªEVA V2 - Observer
+Este proyecto implementa un sistema de gestión de coches utilizando el patrón MVC (Modelo-Vista-Controlador).
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Proyecto MVC Coches
-Este proyecto implementa un sistema de gestión de coches utilizando el patrón MVC (Modelo-Vista-Controlador).
+Cambios para implementar un aviso de límite de velocidad mediante observer:
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Pasos seguidos para implementar la funcionalidad de aviso de exceso de velocidad
