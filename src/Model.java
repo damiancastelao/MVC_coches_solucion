@@ -33,5 +33,10 @@ public class Model {
             coche.bajarVelocidad(v);
         }
     }
+
+    public static ArrayList<Coche> getParking() {
+        return parking;
+    }
 }
+
 
