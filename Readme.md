@@ -119,7 +119,7 @@ participant ObsExceso
     usuario->>View: click! Crear coche
     View->>Controller: el usuario quiere crear un coche
     activate Controller
-    Controller->>Model: crea un coche, porfa
+    Controller->>Model: crea un coche
     activate Model
     Model-->>Controller: Coche
     deactivate Model
@@ -129,7 +129,7 @@ participant ObsExceso
     usuario->>View: click! Subir velocidad
     View->>Controller: el usuario quiere subir la velocidad
     activate Controller
-    Controller->>Model: sube la velocidad, porfa
+    Controller->>Model: sube la velocidad
     activate Model
     Model-->>ObsExceso: Sube la Velocidad
     activate ObsExceso
