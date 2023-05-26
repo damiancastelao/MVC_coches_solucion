@@ -1,4 +1,5 @@
 Proyecto MVC Coches
+*los cambios del segundo examen de la 3ª - límite de velocidad con ovserver están más abajo*
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Proyecto MVC Coches! En este proyecto he implementado una arquitectura Modelo-Vista-Controlador (MVC) para administrar coches y sus velocidades.
 
@@ -15,7 +16,37 @@ También he implementado la capacidad de buscar un coche dado de alta y mostrar 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
 
----
+------------------------------------------------------------------------------------------------------------------------------------------------
+*Examen 3ª V2 cambios utilizando observer*
+Cambios para implementar un aviso de límite de velocidad mediante observer:
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Proyecto MVC Coches
+Este proyecto implementa un sistema de gestión de coches utilizando el patrón MVC (Modelo-Vista-Controlador).
+
+## Pasos seguidos para implementar la funcionalidad de aviso de exceso de velocidad
+1. Crear una nueva rama llamada `ex3observer` utilizando el comando:
+git checkout -b ex3observer
+
+
+2. Editar el código para agregar la funcionalidad de aviso de exceso de velocidad:
+- Se ha creado la clase `ObsExceso` que implementa la interfaz `Observer` para manejar el aviso de exceso de velocidad.
+- En la clase `Coche`, se ha agregado el campo `observers` y se han implementado los métodos para añadir, eliminar y notificar a los observers cuando cambie la velocidad.
+- En la clase `Model`, se ha actualizado el método `crearCoche` para registrar el observer `ObsExceso` al crear un nuevo coche.
+
+3. Subir los cambios a GitHub con los siguientes comandos:
+git add .
+git commit -m "Agregar funcionalidad de aviso de exceso de velocidad"
+git push origin ex3observer
+
+4. Crear un issue en GitHub para exponer los cambios:
+- Título del issue: Implementación de aviso de exceso de velocidad utilizando Observer
+- Descripción del issue: Se ha agregado la funcionalidad de aviso de exceso de velocidad utilizando el patrón Observer. Los detalles de los cambios realizados se encuentran en el pull request asociado.
+
+5. Crear un pull request para fusionar los cambios en la rama principal:
+- Descripción del pull request: Este pull request propone la incorporación de la funcionalidad de aviso de exceso de velocidad utilizando el patrón Observer. Los detalles de los cambios realizados se encuentran en el issue asociado.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 ## Diagrama de clases:
 
 ```mermaid
