@@ -107,3 +107,33 @@ sequenceDiagram
 4. Na View:
     + Creo o metodo mostrarExceso para que mandar o mensaxe
 
+5. Fago o diagrama de secuencias
+```mermaid
+sequenceDiagram
+actor usuario
+participant View
+participant Controller
+participant Model
+participant ObsExceso
+
+    usuario->>View: click! Crear coche
+    View->>Controller: el usuario quiere crear un coche
+    activate Controller
+    Controller->>Model: crea un coche, porfa
+    activate Model
+    Model-->>Controller: Coche
+    deactivate Model
+    Controller->>View: ok, coche creado!
+    deactivate Controller
+    View-->>usuario: tu coche se creó!
+    usuario->>View: click! Subir velocidad
+    View->>Controller: el usuario quiere subir la velocidad
+    activate Controller
+    Controller->>Model: sube la velocidad, porfa
+    activate Model
+    Model-->>ObsExceso: Sube la Velocidad
+    activate ObsExceso
+    ObsExceso-->>View: cambio en la velocidad
+    View-->usuario: tu coche ha cambiado la velocidad. Si la velocidad sobrepasa los 120km/h procede a saltar una alerta.
+```
+
