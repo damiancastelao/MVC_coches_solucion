@@ -12,6 +12,7 @@ public class Model {
     public Coche crearCoche(String modelo, String matricula){
         Coche aux = new Coche(modelo, matricula);
         parking.add(aux);
+        aux.addObserver(new ObsExceso());
         return aux;
     }
 
@@ -38,6 +39,7 @@ public class Model {
      * @return velocidad modificada
      */
     public Integer cambiarVelocidad(String matricula, Integer v) {
+        Coche coche = getCoche(matricula);
         // busca el coche
         getCoche(matricula).velocidad = v;
         // retorna la nueva velocidad
