@@ -14,7 +14,7 @@ public class ObsExceso implements Observer{
     public void update(Observable o, Object arg) {
         Coche coche = (Coche) arg;
         if(coche.velocidad>120) {
-            miVista.mostraExceso(coche.matricula, coche.velocidad);
+            miVista.mostrarExceso(coche.matricula, coche.velocidad);
         }else{
             miVista.muestraVelocidad(coche.matricula, coche.velocidad);
         }
