@@ -2,6 +2,8 @@ import java.lang.module.ModuleDescriptor;
 
 public class Controller {
     public static void main(String[] args) {
+            Model nuevoModelo = new Model();
+            View nuevaVista = new View();
 
         // Crear tres coches
 
