@@ -5,11 +5,11 @@ public class Model {
 
     /**
      * Crea un coche y lo mete en el parking
-     * @param modelo del coche
+     * @param modelo    del coche
      * @param matricula identificador unico
      * @return el coche creado
      */
-    public static Coche crearCoche(String modelo, String matricula){
+    public static Coche crearCoche(String modelo, String matricula) {
         Coche aux = new Coche(modelo, matricula);
         parking.add(aux);
         return aux;
@@ -20,10 +20,10 @@ public class Model {
      * @param matricula a buscar
      * @return chche o null si no existe
      */
-    public static Coche getCoche(String matricula){
+    public static Coche getCoche(String matricula) {
         Coche aux = null;
         // recorre el array buscando por matricula
-        for (Coche e: parking) {
+        for (Coche e : parking) {
             if (e.matricula.equals(matricula)) {
                 aux = e;
             }
@@ -32,7 +32,6 @@ public class Model {
     }
 
     /**
-     *
      * @param matricula
      * @param v nueva velocidad
      * @return velocidad modificada
@@ -41,6 +40,30 @@ public class Model {
         // busca el coche
         getCoche(matricula).velocidad = v;
         // retorna la nueva velocidad
+        return getCoche(matricula).velocidad;
+    }
+
+    /**
+     * Método que aumenta la velocidad en tantas unidades como v
+     *
+     * @param matricula
+     * @param v nueva velocidad
+     * @return velocidad modificada
+     */
+    public static Integer subirVelocidad(String matricula, Integer v) {
+        getCoche(matricula).velocidad += v;
+        return getCoche(matricula).velocidad;
+    }
+
+    /**
+     * Método que disminuye la velocidad en tantas unidades como v
+     *
+     * @param matricula
+     * @param v nueva velocidad
+     * @return velocidad modificada
+     */
+    public static Integer bajarVelocidad(String matricula, Integer v) {
+        getCoche(matricula).velocidad -= v;
         return getCoche(matricula).velocidad;
     }
 
