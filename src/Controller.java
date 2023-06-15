@@ -18,6 +18,15 @@ public class Controller {
             miVista.muestraVelocidad(aux.matricula, aux.velocidad);
         }
     }
+// implementamos el nuevo método buscar coche
+    public static void getCoche(String criterio) {
+        Coche cocheEncontrado = miModelo.getCoche();
+        if (cocheEncontrado != null) {
+            miVista.muestraDatosCoche(cocheEncontrado);
+        } else {
+            miVista.mostrarMensaje("No se encontró ningún coche con el criterio de búsqueda.");
+        }
+    }
 
     /**
      * Método bajar velocidad de un coche

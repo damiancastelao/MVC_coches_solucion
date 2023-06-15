@@ -36,7 +36,7 @@ public class Model {
      */
     public Coche getCoche(String matricula){
         Coche aux = null;
-        // recorre el array buscando por matricula
+        // recorre el array en busca de la matricula
         for (Coche e: parking) {
             if (e.matricula.equals(matricula)) {
                 aux = e;
@@ -49,6 +49,8 @@ public class Model {
      * @param matricula
      * @return velocidad modificada
      */
+
+
     public Integer subirVelocidad(String matricula) {
         // busca el coche y sube la velocidad
         getCoche(matricula).velocidad = getCoche(matricula).velocidad + 10;

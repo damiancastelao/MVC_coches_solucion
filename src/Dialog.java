@@ -16,4 +16,7 @@ public class Dialog extends JDialog{
         dialogo.eVelocidad.setText(mensajito);
         dialogo.setVisible(true);
     }
+
+    public static void vDialog(String s) {
+    }
 }
