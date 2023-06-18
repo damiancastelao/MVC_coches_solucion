@@ -51,16 +51,16 @@ sequenceDiagram
     participant Controller
     participant Model
     
-    usuario->>View: click! Crear coche
+    usuario->>View:  Crear coche
     View->>Controller: el usuario quiere crear un coche
     activate Controller
-    Controller->>Model: crea un coche, porfa
+    Controller->>Model: crea un coche
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>View: ok, coche creado!
+    Controller->>View: coche creado
     deactivate Controller
-    View-->>usuario: tu coche se creó!
+    View-->>usuario: tu coche se creó
 ```
 
 Ahora la parte de la Arquitectura de la vista, son tres clases
@@ -77,7 +77,7 @@ sequenceDiagram
     participant Controller
     participant Model
 
-    usuario->>IU: click! Crear coche
+    usuario->>IU:  Crear coche
     IU->>Controller: crearCoche()
     activate Controller
     Controller->>Model: crearCoche
