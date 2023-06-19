@@ -1,6 +1,6 @@
 # Arquitectura MVC
 
-Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
+Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra. En este caso se añadido compatibilidad con IU
 
 ---
 ## Diagrama de clases:
@@ -14,8 +14,15 @@ classDiagram
     }
       class Controller{
           +main()
+          +crearCoche(String, String)
+          +subirVelocidad(String)
+          +bajarVelocidad(String)
+          +buscarCoche(String)
       }
-      class View {+muestraVelocidad(String, Integer)}
+      class View {
+        +muestraVelocidad(String, Integer) 
+        +muestraCoche(Coche, String)
+      }
       class Model {
           ArrayList~Coche~: parking
           +crearCoche(String, String, String)
@@ -23,49 +30,50 @@ classDiagram
           +cambiarVelocidad(String, Integer)
           +getVelocidad(String)
       }
+      
+      class IU { mostrarVentana()}
+      
+      class Dialog { 
+        +mostrarVelocidad(String, Integer) 
+        +mostrarCoche(Coche, String)  
+      }
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association
-      
+    View "1" *-- "1" IU : association
+    View "1" *-- "1" Dialog : association
+
 ```
 
 ---
 
-## Diagrama de Secuencia
+## Evento en el View
 
-Ejemplo básico del procedimiento, sin utilizar los nombres de los métodos
+Cuando ocurre un evento en la vista, el `controller` se tiene que enterar.
+Tenemos que tener en cuenta que en el MVC estricto, la vista no se comunica con el modelo.
 
+En el listener del botón llamamos al `controller` y este llama primero al `model` y al recibir los datos del model llama a la vista `view`.
 
-```mermaid
-sequenceDiagram
-    participant Model
-    participant Controller
-    participant View
-    Controller->>Model: Puedes crear un coche?
-    activate Model
-    Model-->>Controller: Creado!
-    deactivate Model
-    Controller->>+View: Muestra la velocidad, porfa
-    activate View
-    View->>-View: Mostrando velocidad
-    View-->>Controller: Listo!
-    deactivate View
-```
-
-El mismo diagrama con los nombres de los métodos
 
 ```mermaid
 sequenceDiagram
-    participant Model
-    participant Controller
+    actor usuario
     participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    participant Controller
+    participant Model
+    
+    usuario->>View: click! Crear coche
+    View->>Controller: el usuario quiere crear un coche
+    activate Controller
+    Controller->>Model: crea un coche, porfa
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
-    activate View
-    View->>-View: System.out.println()
-    View-->>Controller: boolean
-    deactivate View
+    Controller->>View: ok, coche creado!
+    deactivate Controller
+    View-->>usuario: tu coche se creó!
 ```
+Pasa lo mismo con los métodos subir velocidad, bajar velocidad y ver coche pero cambiando el texto por el respectivo de esos métodos.
+
+Ahora la parte de la Arquitectura de la vista, son tres clases:
+
