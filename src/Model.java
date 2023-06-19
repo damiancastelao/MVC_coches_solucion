@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Model {
+public class Model{
     static ArrayList<Coche> parking = new ArrayList<>();
 
     /**
@@ -9,10 +9,24 @@ public class Model {
      * @param matricula identificador unico
      * @return el coche creado
      */
-    public static Coche crearCoche(String modelo, String matricula){
+    public Coche crearCoche(String modelo, String matricula){
+        //Crea un coche y lo guarda en un auxiliar
         Coche aux = new Coche(modelo, matricula);
+        //Añade el coche en la colección llamada parking
         parking.add(aux);
         return aux;
+    }
+
+    /**
+     * @param matricula
+     * @param v nueva velocidad
+     * @return velocidad modificada
+     */
+    public Integer cambiarVelocidad(String matricula, Integer v) {
+        // busca el coche
+        getCoche(matricula).velocidad = v;
+        // retorna la nueva velocidad
+        return getCoche(matricula).velocidad;
     }
 
     /**
@@ -20,7 +34,7 @@ public class Model {
      * @param matricula a buscar
      * @return chche o null si no existe
      */
-    public static Coche getCoche(String matricula){
+    public Coche getCoche(String matricula){
         Coche aux = null;
         // recorre el array buscando por matricula
         for (Coche e: parking) {
@@ -32,47 +46,33 @@ public class Model {
     }
 
     /**
-     *
      * @param matricula
-     * @param v nueva velocidad
      * @return velocidad modificada
      */
-    public static Integer cambiarVelocidad(String matricula, Integer v) {
-        // busca el coche
-        getCoche(matricula).velocidad = v;
+    public Integer subirVelocidad(String matricula) {
+        // busca el coche y sube la velocidad
+        getCoche(matricula).velocidad = getCoche(matricula).velocidad + 10;
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
+
     /**
-     *
      * @param matricula
-     * @param v velocidad a aumentar
      * @return velocidad modificada
      */
-    public Integer subirVelocidad(String matricula, Ineteger v){
-        // busca el coche
-        getCoche(matricula).velocidad = getCoche(matricula).velocidad+v;
+    public Integer bajarVelocidad(String matricula) {
+        // busca el coche y sube la velocidad
+        getCoche(matricula).velocidad = getCoche(matricula).velocidad - 10;
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
-    /**
-     *
-     * @param matricula
-     * @param v velocidad a reducir
-     * @return velocidad modificada
-     */
-    public Integer bajarVelocidad(String matricula, Integer v) {
-        // busca el coche
-        getCoche(matricula).velocidad = getCoche(matricula).velocidad-v;
-        // retorna la nueva velocidad
-        return getCoche(matricula).velocidad;
-    }
+
     /**
      * Ddevuelve la velocidad segun la matricula
      * @param matricula
      * @return
      */
-    public static Integer getVelocidad(String matricula) {
+    public Integer getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
     }
 }
