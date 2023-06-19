@@ -9,10 +9,24 @@ public class Model {
      * @param matricula identificador unico
      * @return el coche creado
      */
-    public static Coche crearCoche(String modelo, String matricula){
+    public Coche crearCoche(String modelo, String matricula){
+        //Crea un coche y lo guarda en un auxiliar
         Coche aux = new Coche(modelo, matricula);
+        //Añade el coche en la colección llamada parking
         parking.add(aux);
         return aux;
+    }
+
+    /**
+     * @param matricula
+     * @param v nueva velocidad
+     * @return velocidad modificada
+     */
+    public Integer cambiarVelocidad(String matricula, Integer v) {
+        // busca el coche
+        getCoche(matricula).velocidad = v;
+        // retorna la nueva velocidad
+        return getCoche(matricula).velocidad;
     }
 
     /**
@@ -20,9 +34,9 @@ public class Model {
      * @param matricula a buscar
      * @return chche o null si no existe
      */
-    public static Coche getCoche(String matricula){
+    public Coche getCoche(String matricula){
         Coche aux = null;
-        // recorre el array buscando por matricula
+        // recorre el array en busca de la matricula
         for (Coche e: parking) {
             if (e.matricula.equals(matricula)) {
                 aux = e;
@@ -32,14 +46,25 @@ public class Model {
     }
 
     /**
-     *
      * @param matricula
-     * @param v nueva velocidad
      * @return velocidad modificada
      */
-    public static Integer cambiarVelocidad(String matricula, Integer v) {
-        // busca el coche
-        getCoche(matricula).velocidad = v;
+
+
+    public Integer subirVelocidad(String matricula) {
+        // busca el coche y sube la velocidad
+        getCoche(matricula).velocidad = getCoche(matricula).velocidad + 10;
+        // retorna la nueva velocidad
+        return getCoche(matricula).velocidad;
+    }
+
+    /**
+     * @param matricula
+     * @return velocidad modificada
+     */
+    public Integer bajarVelocidad(String matricula) {
+        // busca el coche y sube la velocidad
+        getCoche(matricula).velocidad = getCoche(matricula).velocidad - 10;
         // retorna la nueva velocidad
         return getCoche(matricula).velocidad;
     }
@@ -49,7 +74,7 @@ public class Model {
      * @param matricula
      * @return
      */
-    public static Integer getVelocidad(String matricula) {
+    public Integer getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
     }
 }

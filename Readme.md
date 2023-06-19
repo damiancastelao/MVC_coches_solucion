@@ -41,13 +41,13 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
-    Controller->>Model: Puedes crear un coche?
+    Controller->>Model: Puedes mostrar coche ?
     activate Model
-    Model-->>Controller: Creado!
+    Model-->>Controller: Buscado!
     deactivate Model
-    Controller->>+View: Muestra la velocidad, porfa
+    Controller->>+View: Muestrame el coche, porfa
     activate View
-    View->>-View: Mostrando velocidad
+    View->>-View: Mostrando la velocidad del coche
     View-->>Controller: Listo!
     deactivate View
 ```
@@ -59,13 +59,12 @@ sequenceDiagram
     participant Model
     participant Controller
     participant View
-    Controller->>Model: crearCoche("Mercedes", "BXK 1234")
+    Controller->>Model: getCoche(Matricula)
     activate Model
     Model-->>Controller: Coche
     deactivate Model
-    Controller->>+View: muestraVelocidad("BXK 1234", velocidad)
+    Controller->>+View: muestraCoche(auxCoche, velocidad)
     activate View
-    View->>-View: System.out.println()
-    View-->>Controller: boolean
+    View->>Dialog: mostrarVelocidad
     deactivate View
 ```
