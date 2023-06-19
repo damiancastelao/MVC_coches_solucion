@@ -1,6 +1,13 @@
 public class View {
-    static boolean muestraVelocidad(String matricula, Integer v){
-        System.out.println(matricula + ": " + v + "km/hr");
-        return true;
+    static boolean muestraCoche(Coche coche) {
+        if (coche != null) {
+            System.out.println("Matrícula: " + coche.matricula);
+            System.out.println("Modelo: " + coche.modelo);
+            System.out.println("Velocidad: " + coche.getVelocidad() + "km/hr");
+            return true;
+        } else {
+            System.out.println("Coche no encontrado");
+            return false;
+        }
     }
 }

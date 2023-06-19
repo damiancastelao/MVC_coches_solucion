@@ -8,4 +8,20 @@ public class Coche {
         this.matricula = matricula;
         this.velocidad = 0;
     }
+
+    public void subirVelocidad(Integer v) {
+        velocidad += v;
+    }
+
+    public void bajarVelocidad(Integer v) {
+        if (velocidad >= v) {
+            velocidad -= v;
+        } else {
+            velocidad = 0;
+        }
+    }
+
+    public Integer getVelocidad() {
+        return velocidad;
+    }
 }
