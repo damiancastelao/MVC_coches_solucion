@@ -1,0 +1,1 @@
+Esta rama contiene la clase con un observer básico.
