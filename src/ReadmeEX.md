@@ -36,3 +36,10 @@
   ![COD_8.png](../img/COD_8.png)
 * Ve a tu repositorio en GitHub, haz clic en la pestaña "Releases", luego en "Draft a new release", selecciona la etiqueta v1.0 en "Tag version" y escribe como título Release v2.0.
   ![COD_9.png](../img/COD_9.png)
+
+
+# VERIFICACION DE PULL REQUEST
+![cod_10.png](../img/cod_10.png)
+
+# VERIFICACION DE MARCKDOWN
+![COD_11.png](../img/COD_11.png)
