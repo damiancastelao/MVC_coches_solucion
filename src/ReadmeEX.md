@@ -19,3 +19,9 @@
 * Con click derecho en la rama `observer` seleccionamos la opcion de realizar un merge   
   ![COD_5.png](../img/COD_5.png)
 * Si lo hacemos asi ya se habran "fusionado las ramas"
+
+# Merge de la rama `pre-observer`
+* Hacemos `checkout` en la rama `master`
+* Con click derecho en la rama `pre-observer` seleccionamos la opcion de realizar un merge   
+  ![COD_6.png](../img/COD_6.png)
+* Si lo hacemos asi ya se habran "fusionado las ramas"
